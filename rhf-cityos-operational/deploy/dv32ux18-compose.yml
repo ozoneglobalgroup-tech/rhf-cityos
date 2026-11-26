@@ -1,0 +1,9 @@
+services:
+  dv32ux18-proof-worker:
+    build:
+      context: ./deploy/dv32ux18-proof-worker
+    environment:
+      TEMPORAL_ADDRESS: rhf-cityos-operational-temporal-1:7233
+    restart: unless-stopped
+    networks:
+      - default

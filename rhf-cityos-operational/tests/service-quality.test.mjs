@@ -1,0 +1,14 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {validateService,validateInspection,ClientError,transition,CASE_TRANSITIONS} from '../api/domain.mjs';
+const cityA='11111111-1111-4111-8111-111111111111';
+const valid={code:'STREET-01',name:'پاکسازی معابر',moduleCode:'URBAN_CLEANING',slaHours:24,outcomeMetric:'کیلومتر پاکسازی'};
+test('accepts a configured service with an SLA and result metric',()=>{const x=validateService(valid);assert.equal(x.slaHours,24);assert.equal(x.code,'STREET-01');});
+test('rejects zero SLA',()=>assert.throws(()=>validateService({...valid,slaHours:0}),ClientError));
+test('rejects overlarge SLA',()=>assert.throws(()=>validateService({...valid,slaHours:8761}),ClientError));
+test('rejects invalid code',()=>assert.throws(()=>validateService({...valid,code:'bad code'}),ClientError));
+test('requires a metric',()=>assert.throws(()=>validateService({...valid,outcomeMetric:''}),ClientError));
+test('rejects malformed inspection evidence',()=>assert.throws(()=>validateInspection({caseId:cityA,result:'PASS',evidence:'  '}),ClientError));
+test('rejects invented inspection status',()=>assert.throws(()=>validateInspection({caseId:cityA,result:'UNKNOWN',evidence:'مدرک'}),ClientError));
+test('accepts signed-off inspection data',()=>assert.equal(validateInspection({caseId:cityA,result:'PASS',evidence:'گزارش تصویری شماره ۷'}).result,'PASS'));
+test('case cannot skip triage',()=>assert.throws(()=>transition('RECEIVED','CLOSED',CASE_TRANSITIONS),ClientError));

@@ -1,0 +1,17 @@
+# RHF City OS supplementary Temporal worker. No ports exposed to host, no DB credentials.
+services:
+  dv32j-planning-worker:
+    build:
+      context: ./deploy/dv32j-temporal-worker
+      dockerfile: Dockerfile
+    environment:
+      TEMPORAL_ADDRESS: rhf-cityos-operational-temporal-1:7233
+      NODE_ENV: production
+      HOME: /tmp
+      XDG_CACHE_HOME: /tmp
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    read_only: true
+    tmpfs:
+      - /tmp:rw,nosuid,nodev,size=64m

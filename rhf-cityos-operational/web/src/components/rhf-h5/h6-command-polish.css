@@ -1,0 +1,24 @@
+/* RHF H6 v1 — conservative compact command center presentation; real API values only. */
+.rhf-home-v2[data-rhf-h5="home-v3"]{--rhf-h6-home:1;gap:13px}
+.rhf-home-v2[data-rhf-h5="home-v3"] .rhf-home-v2__welcome{
+  min-height:154px;padding:20px 26px;border-radius:18px;box-shadow:0 8px 24px #09283e13;
+}
+.rhf-home-v2[data-rhf-h5="home-v3"] .rhf-home-v2__welcome h1{
+  font-size:clamp(23px,2.2vw,28px);line-height:1.45;margin:5px 0 3px;
+}
+.rhf-home-v2[data-rhf-h5="home-v3"] .rhf-home-v2__welcome p{font-size:12px;line-height:1.7}
+.rhf-home-v2[data-rhf-h5="home-v3"] .rhf-home-v2__scope{margin-top:9px}
+.rhf-home-v2[data-rhf-h5="home-v3"] .rhf-home-v2__welcome-art{width:105px;height:105px;box-shadow:0 0 0 16px #b1f9ec0c,0 0 0 37px #b1f9ec0a}
+.rhf-home-v2[data-rhf-h5="home-v3"] .rhf-home-v2__orb{width:77px;height:77px}
+.rhf-home-v2[data-rhf-h5="home-v3"] .rhf-home-v2__metric-bar{gap:10px}
+.rhf-home-v2[data-rhf-h5="home-v3"] .rhf-home-v2__metric{padding:13px 15px;border-radius:13px}
+.rhf-home-v2[data-rhf-h5="home-v3"] .rhf-home-v2__metric strong{font-size:24px;line-height:1.5}
+.rhf-home-v2[data-rhf-h5="home-v3"] .rhf-home-v2__priority-card,
+.rhf-home-v2[data-rhf-h5="home-v3"] .rhf-home-v2__destinations{padding:16px;border-radius:14px}
+.rhf-home-v2[data-rhf-h5="home-v3"] .rhf-home-v2__agent-card{padding:19px;border-radius:14px}
+.rhf-home-v2[data-rhf-h5="home-v3"] .rhf-home-v2__agent-card h2{font-size:18px;margin:14px 0 7px}
+.rhf-home-v2[data-rhf-h5="home-v3"] .rhf-home-v2__destinations-grid button{min-height:110px}
+@media(max-width:650px){
+ .rhf-home-v2[data-rhf-h5="home-v3"] .rhf-home-v2__welcome{padding:18px}
+ .rhf-home-v2[data-rhf-h5="home-v3"] .rhf-home-v2__welcome-art{display:none}
+}

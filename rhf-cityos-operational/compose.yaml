@@ -1,0 +1,54 @@
+name: rhf-cityos-operational
+services:
+  db:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_DB: cityos
+      POSTGRES_USER: cityos_owner
+      POSTGRES_PASSWORD: ${DB_OWNER_PASSWORD:?DB_OWNER_PASSWORD_required}
+      APP_DB_PASSWORD: ${APP_DB_PASSWORD:?APP_DB_PASSWORD_required}
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U cityos_owner -d cityos"]
+      interval: 5s
+      timeout: 3s
+      retries: 25
+    volumes:
+      - cityos_pgdata:/var/lib/postgresql/data
+      - ./db/init.sh:/docker-entrypoint-initdb.d/01-init.sh:ro
+      - ./db/schema.sql:/docker-entrypoint-initdb.d/02-schema.sql:ro
+      - ./db/catalog.sql:/docker-entrypoint-initdb.d/03-catalog.sql:ro
+    restart: unless-stopped
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgresql://cityos_runtime:${APP_DB_PASSWORD:?APP_DB_PASSWORD_required}@db:5432/cityos
+      ADMIN_USERNAME: ${ADMIN_USERNAME:-admin}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:?ADMIN_PASSWORD_required}
+      INITIAL_CITY: ${INITIAL_CITY:-شهرداری شیراز}
+      PORT: 3210
+      NODE_ENV: production
+      RHF_AI_ENABLED: ${RHF_AI_ENABLED:-false}
+      RHF_TWIN_PULL_ENABLED: ${RHF_TWIN_PULL_ENABLED:-false}
+      RHF_TWIN_PULL_CITY_ID: ${RHF_TWIN_PULL_CITY_ID:-}
+      RHF_TWIN_PULL_SOURCE_ID: ${RHF_TWIN_PULL_SOURCE_ID:-}
+      RHF_TWIN_PULL_URL: ${RHF_TWIN_PULL_URL:-}
+      RHF_TWIN_PULL_ALLOWED_HOST: ${RHF_TWIN_PULL_ALLOWED_HOST:-}
+      RHF_TWIN_PULL_FORMAT: ${RHF_TWIN_PULL_FORMAT:-RHF_JSON_V1}
+      RHF_TWIN_PULL_BEARER_TOKEN: ${RHF_TWIN_PULL_BEARER_TOKEN:-}
+      RHF_AI_API_KEY: ${RHF_AI_API_KEY:-}
+      RHF_AI_MODEL: ${RHF_AI_MODEL:-gpt-4.1-mini}
+    ports:
+      - '127.0.0.1:${CITYOS_PORT:-5189}:3210'
+    healthcheck:
+      test: ["CMD", "node", "health.mjs"]
+      interval: 10s
+      timeout: 4s
+      retries: 12
+    restart: unless-stopped
+volumes:
+  cityos_pgdata:

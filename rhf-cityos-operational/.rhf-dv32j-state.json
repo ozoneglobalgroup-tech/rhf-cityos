@@ -1,0 +1,48 @@
+{
+  "version": "DV32J.1",
+  "status": "APPLIED",
+  "backup": "/home/oosh/rhf-cityos-backups/dv32j-temporal-handoff-20261124T043553Z/source",
+  "originalSha256": {
+    "api/server.mjs": "add3d8858972618ed826c73569fa267d90fa98c09036e44503ec34d4fbcdb386",
+    "api/package.json": "0e43a05301637f09fa97b8f405cbbba55c9454a07191e7567fe1b1116bfd4133",
+    "web/src/components/rhf-h5/Dv32DCapacityReservations.jsx": "6da8b8db8177ea4f62d4aa826127f2a055eac23731f40a8a486b54241a7ae605"
+  },
+  "originalMode": {
+    "api/server.mjs": 420,
+    "api/package.json": 420,
+    "web/src/components/rhf-h5/Dv32DCapacityReservations.jsx": 420
+  },
+  "newFiles": [
+    "web/src/components/rhf-h5/Dv32DCapacityReservationsDv32I.jsx",
+    "api/dv32j-core.mjs",
+    "api/dv32j-routes.mjs",
+    "web/src/components/rhf-h5/Dv32JTemporalHandoff.jsx",
+    "deploy/dv32j-compose.yml",
+    "deploy/dv32j-temporal-worker/Dockerfile",
+    "deploy/dv32j-temporal-worker/package.json",
+    "deploy/dv32j-temporal-worker/worker.mjs",
+    "deploy/dv32j-temporal-worker/workflows.mjs"
+  ],
+  "modifiedFiles": [
+    "api/server.mjs",
+    "api/package.json",
+    "web/src/components/rhf-h5/Dv32DCapacityReservations.jsx"
+  ],
+  "databaseMigration": "NONE",
+  "autoTemporalWorkflowStarts": false,
+  "operationalActivities": false,
+  "patchedSha256": {
+    "api/server.mjs": "975e6fe2955379abbb9901772b779c7eb502d8d45875b13b3a546376b6f4266c",
+    "api/package.json": "0e43a05301637f09fa97b8f405cbbba55c9454a07191e7567fe1b1116bfd4133",
+    "web/src/components/rhf-h5/Dv32DCapacityReservations.jsx": "a670e57e66a2abff7d05bcc6e3adce562293fd569585bf2c5f013dc08591516c",
+    "web/src/components/rhf-h5/Dv32DCapacityReservationsDv32I.jsx": "6da8b8db8177ea4f62d4aa826127f2a055eac23731f40a8a486b54241a7ae605",
+    "api/dv32j-core.mjs": "09ca1af8822ec0ebc633f54683d0a969d18b5c300f08310a0ca6c55ea3cdd685",
+    "api/dv32j-routes.mjs": "86ada8541f0dd084fe5ea931a0468c3ef62b0faa72106c2d8f75bc32f5feb2b5",
+    "web/src/components/rhf-h5/Dv32JTemporalHandoff.jsx": "d5f48fcb8c2675eae86e5d38d320581998524c0fc0422e2c9c80555513d947da",
+    "deploy/dv32j-compose.yml": "9439c9f9c6dd3119c18123a4ca038bed8b38ed1ff710fcde2373b600760fadfa",
+    "deploy/dv32j-temporal-worker/Dockerfile": "bc256a9a4814f169222a73ab946cd641f277074043c979b6327aad9d027b9bd9",
+    "deploy/dv32j-temporal-worker/package.json": "113cb8fc2b162363d2e73ffc30f32559e42f0c4a72f3cdaa447dd86099ae74f8",
+    "deploy/dv32j-temporal-worker/worker.mjs": "34842378324f65bed55424b20643969b9e02c0428802e2fc6ce90077e6aed53f",
+    "deploy/dv32j-temporal-worker/workflows.mjs": "399ec1a34ba25070a0c56514489c0504c50042e443d3b6d297e74cef68a6cb21"
+  }
+}

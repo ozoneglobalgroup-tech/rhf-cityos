@@ -1,0 +1,15 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+import {transition,CASE_TRANSITIONS,MISSION_TRANSITIONS,requiredString,choice,uuid,amount,number,valueOf,canWrite,canManage} from '../api/domain.mjs';
+test('case lifecycle accepts valid transitions',()=>assert.doesNotThrow(()=>transition('RECEIVED','TRIAGED',CASE_TRANSITIONS)));
+test('case cannot skip acceptance',()=>assert.throws(()=>transition('IN_PROGRESS','CLOSED',CASE_TRANSITIONS)));
+test('case closed is terminal',()=>assert.throws(()=>transition('CLOSED','RECEIVED',CASE_TRANSITIONS)));
+test('mission cannot complete without starting',()=>assert.throws(()=>transition('PLANNED','DONE',MISSION_TRANSITIONS)));
+test('input rejects unknown module statuses',()=>assert.throws(()=>choice('SUPER',['LOW','HIGH'],'priority')));
+test('input rejects blank string',()=>assert.throws(()=>requiredString('  ','name')));
+test('ids must be UUID',()=>assert.throws(()=>uuid('x')));
+test('large unsafe currency input rejected',()=>assert.throws(()=>amount(Number.MAX_SAFE_INTEGER+100,'cost')));
+test('nan blocked',()=>assert.throws(()=>number(NaN,'baseline')));
+test('unverified benefit not counted',()=>assert.equal(valueOf({status:'DRAFT',baseline_cost_minor:10000,actual_cost_minor:0,implementation_cost_minor:0,attribution_bps:10000}),0));
+test('verified benefit subtracts costs and adjusts attribution',()=>assert.equal(valueOf({status:'VERIFIED',baseline_cost_minor:10000,actual_cost_minor:2000,implementation_cost_minor:1000,attribution_bps:5000}),3000));
+test('viewer cannot write or manage',()=>{assert.equal(canWrite('VIEWER'),false);assert.equal(canManage('VIEWER'),false)});
+test('operator can write but not manage modules',()=>{assert.equal(canWrite('OPERATOR'),true);assert.equal(canManage('OPERATOR'),false)});

@@ -1,0 +1,4 @@
+.rhf-dv23b2b{margin:18px 0;border:1px solid var(--rhf-border,#d4dde2);border-radius:14px;padding:17px;background:var(--rhf-card,#fff);color:inherit}
+.rhf-dv23b2b header{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.rhf-dv23b2b article{border:1px solid #d4d9dc;border-radius:9px;padding:12px;margin:12px 0;display:flex;flex-wrap:wrap;gap:9px;align-items:center}
+.rhf-dv23b2b article strong{flex:1 1 100%}.rhf-dv23b2b button{border:1px solid #84949d;border-radius:8px;padding:7px 11px;background:transparent;cursor:pointer}.rhf-dv23b2b button:disabled{opacity:.45;cursor:not-allowed}

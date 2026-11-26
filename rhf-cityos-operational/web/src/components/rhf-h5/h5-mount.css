@@ -1,0 +1,6 @@
+.rhf-h5-legacy-tools{border:1px solid #dce8ee;border-radius:15px;background:#fff;margin:12px 0 20px;overflow:hidden;color:#244b60}
+.rhf-h5-legacy-tools>summary{padding:12px 16px;cursor:pointer;font-weight:700;font-size:12px;outline-offset:-3px;list-style:revert}
+.rhf-h5-legacy-tools[open]>summary{border-bottom:1px solid #e5edf1;background:#f4faf9}
+.rhf-h5-legacy-tools>div{padding:12px}
+.rhf-h5-legacy-tools:focus-within{outline:1px solid #75beb8}
+@media(max-width:700px){.rhf-h5-legacy-tools>div{padding:8px}}

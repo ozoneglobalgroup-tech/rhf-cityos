@@ -1,0 +1,36 @@
+{
+  "version": "DV32M.1",
+  "status": "APPLIED",
+  "backup": "/home/oosh/rhf-cityos-backups/dv32m-temporal-observability-20261124T052137Z/source",
+  "originalSha256": {
+    "api/server.mjs": "ddf0d405cb5dcfe48dd14d728aa74ac7dd90a59a66de77c60810a20b629cedcd",
+    "web/src/components/rhf-h5/Dv32DCapacityReservations.jsx": "56031f3b8734d92f4b1c0834fd3b68af4ef64f75aeae1ee179ec44d53d221e19"
+  },
+  "originalMode": {
+    "api/server.mjs": 420,
+    "web/src/components/rhf-h5/Dv32DCapacityReservations.jsx": 420
+  },
+  "modifiedFiles": [
+    "api/server.mjs",
+    "web/src/components/rhf-h5/Dv32DCapacityReservations.jsx"
+  ],
+  "newFiles": [
+    "web/src/components/rhf-h5/Dv32DCapacityReservationsDv32L.jsx",
+    "api/dv32m-temporal-core.mjs",
+    "api/dv32m-temporal-routes.mjs",
+    "web/src/components/rhf-h5/Dv32MTemporalObservability.jsx"
+  ],
+  "databaseMigrations": 0,
+  "iamMutations": 0,
+  "temporalStarts": 0,
+  "temporalSignals": 0,
+  "fieldDispatch": false,
+  "patchedSha256": {
+    "api/server.mjs": "83609fabd4f34a267f41a6efc9ed2bf30162d12908b7bf34c78a5c2525d04fb4",
+    "web/src/components/rhf-h5/Dv32DCapacityReservations.jsx": "89be7a0c98fbd6a7b4ec97fc0f3df2ae4c9d46fa31193588f3b5ae9424ca397b",
+    "web/src/components/rhf-h5/Dv32DCapacityReservationsDv32L.jsx": "56031f3b8734d92f4b1c0834fd3b68af4ef64f75aeae1ee179ec44d53d221e19",
+    "api/dv32m-temporal-core.mjs": "fc49d61c971c1837ce1e53563d4a26b52acaecaaacd5b07c04d6779976897997",
+    "api/dv32m-temporal-routes.mjs": "54e1827cdd651100b9acaa31447234322f5e608a9a6e38eff2d13199b0526b39",
+    "web/src/components/rhf-h5/Dv32MTemporalObservability.jsx": "cbfbea79f7c7fa4696b995d8c10b2937457eb25ad35662c10a977017f1aade20"
+  }
+}

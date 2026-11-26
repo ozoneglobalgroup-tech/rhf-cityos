@@ -1,0 +1,35 @@
+{
+  "version": "DV32UX7.1",
+  "status": "APPLIED",
+  "backup": "/home/oosh/rhf-cityos-backups/dv32ux7-independent-review-20261124T183324Z/source",
+  "modifiedFiles": [
+    "web/src/components/rhf-h5/Dv32UX4RoleWorkspaces.jsx",
+    "web/src/components/rhf-h5/Dv32UX4RouterCore.mjs",
+    "api/server.mjs"
+  ],
+  "newFiles": [
+    "api/dv32ux7-review-core.mjs",
+    "api/dv32ux7-review-routes.mjs",
+    "web/src/components/rhf-h5/Dv32UX7ReviewCore.mjs",
+    "web/src/components/rhf-h5/Dv32UX7IndependentCaseReview.jsx"
+  ],
+  "originalSha256": {
+    "web/src/components/rhf-h5/Dv32UX4RoleWorkspaces.jsx": "fd0dcdfcbe9dbaca9a8bcebd61dd08944646f263dfe5bca2fd5102cb8f91d646",
+    "web/src/components/rhf-h5/Dv32UX4RouterCore.mjs": "e8f9f9c81eb27b5c255ff32fba096a544a4f2dabae3acd11285f0cdc4d49341e",
+    "api/server.mjs": "13dfd7f6337445dde2940bde5f819a1cf8d762a650460ebdff5e84ecfdd56070"
+  },
+  "originalMode": {
+    "web/src/components/rhf-h5/Dv32UX4RoleWorkspaces.jsx": 420,
+    "web/src/components/rhf-h5/Dv32UX4RouterCore.mjs": 420,
+    "api/server.mjs": 420
+  },
+  "patchedSha256": {
+    "web/src/components/rhf-h5/Dv32UX4RoleWorkspaces.jsx": "d18001946b29511c4d99bdee8c4d037dc3210eccc8958aecbbcf1a5675039bb0",
+    "web/src/components/rhf-h5/Dv32UX4RouterCore.mjs": "4f7355dbae66d20a8b2e7865f601ee63271603c9aef3ed534ac76a3d1a309ab8",
+    "api/server.mjs": "8a1dded0e124e7113a6030e9b974c44d9ccb22a0a319c1f3d0b94ce48e0ff5a3",
+    "api/dv32ux7-review-core.mjs": "9b34d18cc2b60aefb29284fbaa263f12a6d997ea11deda4687a204a151f8f207",
+    "api/dv32ux7-review-routes.mjs": "4d4a055430698d7e0f7b0deff659bfb84b99b2106c1f6d09c104bad0bae876cb",
+    "web/src/components/rhf-h5/Dv32UX7ReviewCore.mjs": "418c31cfb59be5a09d31f42a8d18eec9b81423fdbe678d1ffc1acee1c28d6048",
+    "web/src/components/rhf-h5/Dv32UX7IndependentCaseReview.jsx": "d1e7b57500605f07ad896b633945ee20fc843538af6349404f551a6fb758281c"
+  }
+}

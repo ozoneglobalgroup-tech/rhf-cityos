@@ -1,0 +1,37 @@
+{
+  "version": "DV32UX11-12.1",
+  "status": "APPLIED",
+  "backup": "/home/oosh/rhf-cityos-backups/dv32ux11x12-mapping-review-ui-20261125T004454Z/source",
+  "modifiedFiles": [
+    "api/server.mjs",
+    "web/src/components/rhf-h5/Dv32UX4RoleWorkspaces.jsx",
+    "web/src/components/rhf-h5/Dv32UX4RouterCore.mjs"
+  ],
+  "newFiles": [
+    "api/dv32ux11-work-core.mjs",
+    "api/dv32ux11-work-routes.mjs",
+    "api/dv32ux12-handoff-routes.mjs",
+    "web/src/components/rhf-h5/Dv32UX11WorkOrderDesk.jsx",
+    "web/src/components/rhf-h5/Dv32UX11Flow.css"
+  ],
+  "originalSha256": {
+    "api/server.mjs": "b6123803fa271b898ac29b2cc15ee0cad04492e2eff1cae3757b7377e2fa2816",
+    "web/src/components/rhf-h5/Dv32UX4RoleWorkspaces.jsx": "286c4951cc3d5d9d7c234a7bf1e523343076fdf91596cf719335814978f95032",
+    "web/src/components/rhf-h5/Dv32UX4RouterCore.mjs": "9639b118bcf78cf4d1d86c638acde5a33dff363ffae43b07716d87f50874741c"
+  },
+  "originalMode": {
+    "api/server.mjs": 420,
+    "web/src/components/rhf-h5/Dv32UX4RoleWorkspaces.jsx": 420,
+    "web/src/components/rhf-h5/Dv32UX4RouterCore.mjs": 420
+  },
+  "patchedSha256": {
+    "api/server.mjs": "67989107ceb8f9b62540067400372482fd67628b5c62c9d8d3f1a20c247342a0",
+    "web/src/components/rhf-h5/Dv32UX4RoleWorkspaces.jsx": "0507ad277e165484d5e400da6d287bfc4b6d707d35ed030943839004fe8d354d",
+    "web/src/components/rhf-h5/Dv32UX4RouterCore.mjs": "c3ddd55be8894c15a283ed75bd742116a04009f354cda588473b21809f35ab5a",
+    "api/dv32ux11-work-core.mjs": "887f119e4ef3380258c01e8ece664baa12ae48d61faca07ef504e2d370faad33",
+    "api/dv32ux11-work-routes.mjs": "ce6131b23eb6e6c12786a677ee5c593cbfc7016a28f4ae81be5097edfc1273a6",
+    "api/dv32ux12-handoff-routes.mjs": "103fe662731a7454794f2937c93139eb3c67cddfd37dbfcdfecdf5e24c888712",
+    "web/src/components/rhf-h5/Dv32UX11WorkOrderDesk.jsx": "a718dd3c797554bbfdacf8593dbb31eee8e9b9a6c626891917d4395fca745f8d",
+    "web/src/components/rhf-h5/Dv32UX11Flow.css": "8356c8ffca6b1cd48a690b218475af61cbeb46879e72e415a43463ac616149ff"
+  }
+}

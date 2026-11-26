@@ -1,0 +1,39 @@
+/* DV32UX43: workbench-first navigation: RTL, responsive, accessible. */
+.rhf-ux-shell .rhf-d43__focusbar{
+ background:linear-gradient(125deg,#103951,#12647b);
+ color:#fff;border-radius:18px;padding:clamp(14px,2vw,24px);
+ margin:0 0 16px;display:flex;align-items:center;justify-content:space-between;
+ gap:20px;flex-wrap:wrap;box-shadow:0 12px 32px rgba(12,49,66,.11);
+}
+.rhf-ux-shell .rhf-d43__focus-copy{flex:1 1 310px;min-width:0}
+.rhf-ux-shell .rhf-d43__kicker{display:block;font-size:.78rem;color:#b7ebee;font-weight:750;letter-spacing:.01em;margin-bottom:5px}
+.rhf-ux-shell .rhf-d43__focus-copy h2{font-size:clamp(1.25rem,2.5vw,1.8rem);margin:0 0 6px;color:#fff;line-height:1.4}
+.rhf-ux-shell .rhf-d43__focus-copy p{font-size:1rem;line-height:1.7;margin:0 0 6px}
+.rhf-ux-shell .rhf-d43__focus-copy small{color:#d2e9f2;line-height:1.65}
+.rhf-ux-shell .rhf-d43__focus-actions{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+.rhf-ux-shell .rhf-d43__current-tab{border-radius:30px;background:rgba(255,255,255,.16);padding:9px 13px;font-size:.83rem}
+.rhf-ux-shell .rhf-d43__focus-actions button,
+.rhf-ux-shell .rhf-d43__blocked button{border-radius:11px;border:1px solid #d3e9f0;background:#fff;color:#13516a;padding:10px 14px;cursor:pointer;font:inherit;font-weight:700;min-height:44px}
+.rhf-ux-shell .rhf-d43__main:focus{outline:3px solid #23a5aa;outline-offset:3px;border-radius:10px}
+.rhf-ux-shell .rhf-d43__verification,
+.rhf-ux-shell .rhf-d43__blocked{background:#fff;border:1px solid #c4d9e5;border-radius:16px;padding:22px;margin:12px 0;line-height:1.8}
+.rhf-ux-shell .rhf-d43__blocked{border-right:5px solid #ad6741}
+.rhf-ux-shell .rhf-d43__blocked strong{display:block;color:#813d2b;font-size:1.1rem}
+.rhf-ux-shell .rhf-ux-work-layout{min-width:0}
+.rhf-ux-shell .rhf-ux-sidebar{max-height:calc(100vh - 115px);overflow-y:auto;min-width:0;scrollbar-gutter:stable}
+.rhf-ux-shell button:focus-visible,.rhf-ux-shell select:focus-visible{outline:3px solid #2ba1ba;outline-offset:2px}
+@media(max-width:850px){
+ .rhf-ux-shell .rhf-ux-work-layout{grid-template-columns:minmax(0,1fr)!important}
+ .rhf-ux-shell .rhf-ux-sidebar{position:static!important;max-height:none;display:flex;gap:7px;overflow-x:auto;align-items:center;padding:9px!important;scrollbar-gutter:auto}
+ .rhf-ux-shell .rhf-ux-sidebar h3{margin:0 8px!important;white-space:nowrap}
+ .rhf-ux-shell .rhf-ux-sidebar button{width:auto!important;min-width:max-content;white-space:nowrap;margin:0!important;min-height:44px}
+ .rhf-ux-shell .rhf-d43__focusbar{border-radius:13px}
+}
+@media(max-width:520px){
+ .rhf-ux-shell .rhf-d43__focusbar{padding:14px}
+ .rhf-ux-shell .rhf-d43__focus-actions{width:100%}
+ .rhf-ux-shell .rhf-d43__focus-actions button{flex:1}
+ .rhf-ux-shell .rhf-ux-header{align-items:stretch!important}
+ .rhf-ux-shell .rhf-ux-header button{min-height:44px}
+}
+@media(prefers-reduced-motion:reduce){.rhf-ux-shell .rhf-d43__focusbar{scroll-behavior:auto}}

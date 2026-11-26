@@ -1,0 +1,31 @@
+{
+  "version": "DV32Q.7",
+  "status": "APPLIED",
+  "backup": "/home/oosh/rhf-cityos-backups/dv32q7-operational-catalog-20261124T092720Z/source",
+  "originalSha256": {
+    "api/server.mjs": "e62fde9dc486855ffb0478e3d29d988224a77d52b08b93ba06ef00358f77ab57",
+    "web/src/components/rhf-h5/Dv32DCapacityReservations.jsx": "a12ab8db96b232639bdb6891d99dd11926423ab6c5a7a7cde51e98c7760c7b52"
+  },
+  "originalMode": {
+    "api/server.mjs": 420,
+    "web/src/components/rhf-h5/Dv32DCapacityReservations.jsx": 420
+  },
+  "modifiedFiles": [
+    "api/server.mjs",
+    "web/src/components/rhf-h5/Dv32DCapacityReservations.jsx"
+  ],
+  "newFiles": [
+    "web/src/components/rhf-h5/Dv32DCapacityReservationsDv32Q6.jsx",
+    "api/dv32q7-catalog-core.mjs",
+    "api/dv32q7-catalog-routes.mjs",
+    "web/src/components/rhf-h5/Dv32Q7OperationalCatalog.jsx"
+  ],
+  "patchedSha256": {
+    "api/server.mjs": "ac8704f9ee9574564c2338347febaa7c8fc848a3e1f95f13d087407662ab76bf",
+    "web/src/components/rhf-h5/Dv32DCapacityReservations.jsx": "4562f06d2183f6f5ed12a4df2df8b0107a0cd48c936c348f31192574b8ec209d",
+    "web/src/components/rhf-h5/Dv32DCapacityReservationsDv32Q6.jsx": "a12ab8db96b232639bdb6891d99dd11926423ab6c5a7a7cde51e98c7760c7b52",
+    "api/dv32q7-catalog-core.mjs": "ee1b05169773fe63b6167fea253540256db183ef6c9411425f26f58e317679f4",
+    "api/dv32q7-catalog-routes.mjs": "6344c39c798c1fd79dbb95b378d17f1f93551aac94e2f05bdd62a167b937a74b",
+    "web/src/components/rhf-h5/Dv32Q7OperationalCatalog.jsx": "0474e338e8400b6177beb26b7683ef11a7a6d2eaaba60d980fa0687ee1d00e89"
+  }
+}

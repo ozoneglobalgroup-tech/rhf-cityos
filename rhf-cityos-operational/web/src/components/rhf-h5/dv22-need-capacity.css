@@ -1,0 +1,17 @@
+.rhf-dv22{margin:16px 0;padding:20px;border:1px solid #bfd4d3;border-radius:16px;background:#fff;color:#183b40;box-shadow:0 2px 16px #1234}
+.rhf-dv22 header,.rhf-dv22__record-head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.rhf-dv22 small,.rhf-dv22 footer{font-size:12px;color:#5b7377}
+.rhf-dv22 h3,.rhf-dv22 h4{margin:6px 0}.rhf-dv22 p{margin:8px 0}
+.rhf-dv22 button{background:#0e6268;border:1px solid #0e6268;border-radius:8px;color:white;padding:8px 14px;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.rhf-dv22 button:disabled{opacity:.5;cursor:not-allowed}
+.rhf-dv22__warning{padding:12px;background:#fff5ee;border:1px solid #d5a489;border-radius:8px;display:flex;gap:8px;align-items:center}
+.rhf-dv22__caution{display:flex;gap:8px;padding:12px;background:#eef7f5;border-radius:10px;margin:12px 0}
+.rhf-dv22__stats{display:flex;flex-wrap:wrap;gap:10px;margin:10px 0}.rhf-dv22__stats span{background:#f4f7f8;padding:10px;border-radius:9px;font-size:13px}
+.rhf-dv22__form{padding:16px;border:1px solid #d5e3e3;border-radius:12px;margin:18px 0}
+.rhf-dv22__fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.rhf-dv22 label{display:grid;gap:6px;font-size:13px}.rhf-dv22 input,.rhf-dv22 textarea,.rhf-dv22 select{font:inherit;width:100%;min-width:0;box-sizing:border-box;border:1px solid #adbec1;border-radius:7px;padding:9px;background:white;color:#163a40}
+.rhf-dv22__wide{grid-column:1/-1}.rhf-dv22__form>button{margin-top:12px}
+.rhf-dv22__records article{padding:14px;border:1px solid #dce8e8;border-radius:10px;margin:10px 0}.rhf-dv22__records article p{white-space:pre-wrap}
+.rhf-dv22__record-head span{font-size:12px;color:#3d6b74}.rhf-dv22__review{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.rhf-dv22__review textarea{flex:1 1 240px}
+.rhf-dv22__notice{padding:12px;border:1px solid #b4d8c8;border-radius:10px;background:#f1fcf5}
+@media(max-width:700px){.rhf-dv22{padding:12px}.rhf-dv22__fields{grid-template-columns:1fr}}

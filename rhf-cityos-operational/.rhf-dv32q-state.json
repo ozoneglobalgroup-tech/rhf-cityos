@@ -1,0 +1,36 @@
+{
+  "version": "DV32Q.1",
+  "status": "APPLIED",
+  "backup": "/home/oosh/rhf-cityos-backups/dv32q-shiraz-coverage-20261124T063001Z/source",
+  "originalSha256": {
+    "api/server.mjs": "2be790d580c5bdb3417389c3dcf58187e3dc78344c24b25d9fe2bc08beff4428",
+    "web/src/components/rhf-h5/Dv32DCapacityReservations.jsx": "e2bac1bbc3105189e0506faf168687a7f6ee903150be730c441bd55abbae3356"
+  },
+  "originalMode": {
+    "api/server.mjs": 420,
+    "web/src/components/rhf-h5/Dv32DCapacityReservations.jsx": 420
+  },
+  "modifiedFiles": [
+    "api/server.mjs",
+    "web/src/components/rhf-h5/Dv32DCapacityReservations.jsx"
+  ],
+  "newFiles": [
+    "web/src/components/rhf-h5/Dv32DCapacityReservationsDv32P.jsx",
+    "api/dv32q-coverage-core.mjs",
+    "api/dv32q-coverage-routes.mjs",
+    "web/src/components/rhf-h5/Dv32QShirazCoverage.jsx"
+  ],
+  "schemaRetainedOnSourceRollback": true,
+  "autoFieldCases": 0,
+  "autoAssignments": 0,
+  "autoTemporalStarts": 0,
+  "autoDirectorGrants": 0,
+  "patchedSha256": {
+    "api/server.mjs": "230b02dae1b2949e1d9c61d6d03771a7283187977c2d25cecb0ab8b6498c64e5",
+    "web/src/components/rhf-h5/Dv32DCapacityReservations.jsx": "b95ab58a7e6731eec30ee1ea3c9e5a5f6b92c579bd24e0288a7c6c4f707291f9",
+    "web/src/components/rhf-h5/Dv32DCapacityReservationsDv32P.jsx": "e2bac1bbc3105189e0506faf168687a7f6ee903150be730c441bd55abbae3356",
+    "api/dv32q-coverage-core.mjs": "0257bdc1810363ecb44aba54cf83f81ea9b432544342b3a15efd1475efd1d5a7",
+    "api/dv32q-coverage-routes.mjs": "f9567228161143e727cfd348ff7c2fd0801dfcd42e4a668001a3baa08a39d06a",
+    "web/src/components/rhf-h5/Dv32QShirazCoverage.jsx": "8d76dfb0f4b1e1a586c7d4b1449648975086425adf706120d73982a9e72a3886"
+  }
+}

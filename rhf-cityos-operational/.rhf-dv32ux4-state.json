@@ -1,0 +1,26 @@
+{
+  "version": "DV32UX4.1",
+  "status": "APPLIED",
+  "backup": "/home/oosh/rhf-cityos-backups/dv32ux4-role-workspaces-20261124T175348Z/source",
+  "modifiedFiles": [
+    "web/src/components/rhf-h5/Dv32DCapacityReservations.jsx"
+  ],
+  "newFiles": [
+    "web/src/components/rhf-h5/Dv32DCapacityReservationsDv32UX3.jsx",
+    "web/src/components/rhf-h5/Dv32UX4RouterCore.mjs",
+    "web/src/components/rhf-h5/Dv32UX4RoleWorkspaces.jsx"
+  ],
+  "originalSha256": {
+    "web/src/components/rhf-h5/Dv32DCapacityReservations.jsx": "e2fd230fb28e89aea6d94f17659af99ea24ce99a173fc73085a11133882d9e62"
+  },
+  "originalMode": {
+    "web/src/components/rhf-h5/Dv32DCapacityReservations.jsx": 420
+  },
+  "priorVersion": "DV32UX3.1",
+  "patchedSha256": {
+    "web/src/components/rhf-h5/Dv32DCapacityReservations.jsx": "885013c49c10b8124ce75f1412fd3559bdacb9d1e65333568d6e2ea2174da582",
+    "web/src/components/rhf-h5/Dv32DCapacityReservationsDv32UX3.jsx": "e2fd230fb28e89aea6d94f17659af99ea24ce99a173fc73085a11133882d9e62",
+    "web/src/components/rhf-h5/Dv32UX4RouterCore.mjs": "223e49e9076ed0914966ad8857f8c28a5998d9164b5490bf83b15916e1a4f3d0",
+    "web/src/components/rhf-h5/Dv32UX4RoleWorkspaces.jsx": "d760f1df7c021b1dad2a8d0b952fd0358e99ffbf12836c15339fc94cbacd25a3"
+  }
+}

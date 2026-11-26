@@ -1,0 +1,30 @@
+{
+  "version": "DV32UX3.1",
+  "status": "APPLIED",
+  "backup": "/home/oosh/rhf-cityos-backups/dv32ux3-three-os-20261124T101452Z/source",
+  "modifiedFiles": [
+    "web/src/components/rhf-h5/Dv32DCapacityReservations.jsx",
+    "web/src/main.jsx"
+  ],
+  "newFiles": [
+    "web/src/components/rhf-h5/Dv32DCapacityReservationsDv32Q7.jsx",
+    "web/src/components/rhf-h5/Dv32UX3GatewayCore.mjs",
+    "web/src/components/rhf-h5/Dv32UX3Gateway.jsx"
+  ],
+  "originalSha256": {
+    "web/src/components/rhf-h5/Dv32DCapacityReservations.jsx": "4562f06d2183f6f5ed12a4df2df8b0107a0cd48c936c348f31192574b8ec209d",
+    "web/src/main.jsx": "7096c2805914d625a045548bbb46c0fbd894507cdbe14a844646ec60020e05cf"
+  },
+  "originalMode": {
+    "web/src/components/rhf-h5/Dv32DCapacityReservations.jsx": 420,
+    "web/src/main.jsx": 384
+  },
+  "legacyLabel": "FOUND",
+  "patchedSha256": {
+    "web/src/components/rhf-h5/Dv32DCapacityReservations.jsx": "e2fd230fb28e89aea6d94f17659af99ea24ce99a173fc73085a11133882d9e62",
+    "web/src/main.jsx": "46f07a2d86cd014fc594d412a55c84bf8c51602f402688cc8d5c8bab480c6a63",
+    "web/src/components/rhf-h5/Dv32DCapacityReservationsDv32Q7.jsx": "4562f06d2183f6f5ed12a4df2df8b0107a0cd48c936c348f31192574b8ec209d",
+    "web/src/components/rhf-h5/Dv32UX3GatewayCore.mjs": "c8e2dc783950b8074db2129c4f1bbd9be0b971c7d58c4d72c8a3abb0f65f66a5",
+    "web/src/components/rhf-h5/Dv32UX3Gateway.jsx": "4e0fc735595799a82672ec37a2911698aae16f04e72a678c1deb3b0d5995ea6a"
+  }
+}

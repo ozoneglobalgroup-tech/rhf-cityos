@@ -1,0 +1,10 @@
+.rhf-dv23b{margin:20px 0;padding:20px;border:1px solid #cbd5e1;border-radius:16px;background:#f8fafc;color:#172554}
+.rhf-dv23b header{display:flex;justify-content:space-between;gap:16px;align-items:start;flex-wrap:wrap}
+.rhf-dv23b h3{font-size:1.17rem;margin:5px 0}.rhf-dv23b p{line-height:1.7}.rhf-dv23b header small{font-size:.76rem;letter-spacing:.06em}
+.rhf-dv23b button{padding:9px 14px;border-radius:9px;border:1px solid #64748b;background:white;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.rhf-dv23b button:disabled{opacity:.55;cursor:not-allowed}.rhf-dv23b__warning,.rhf-dv23b__warn{padding:12px;border-inline-start:3px solid #a16207;background:#fefce8;margin:12px 0}
+.rhf-dv23b__form,.rhf-dv23b__items article{border:1px solid #cbd5e1;background:white;border-radius:10px;padding:13px;margin:12px 0}
+.rhf-dv23b label{display:block;font-weight:600;margin:8px 0}.rhf-dv23b select,.rhf-dv23b textarea{display:block;box-sizing:border-box;width:100%;font:inherit;padding:9px;border:1px solid #94a3b8;border-radius:7px;margin-top:4px}
+.rhf-dv23b__review{border-top:1px solid #cbd5e1;margin-top:9px;padding-top:9px;display:flex;gap:8px;flex-wrap:wrap}
+.rhf-dv23b__review textarea{flex-basis:100%}.rhf-dv23b footer{font-size:.83rem;color:#475569;display:flex;gap:6px;align-items:center}
+@media(max-width:640px){.rhf-dv23b{padding:12px}.rhf-dv23b button{font-size:.86rem}}

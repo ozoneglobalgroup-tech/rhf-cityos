@@ -1,0 +1,45 @@
+/* UX16 scoped enterprise-grade RTL decision cockpit. No global style overrides. */
+.rhf-ux-shell .ux16-root{--ux16-navy:#122a42;--ux16-muted:#4f6376;--ux16-line:#d7e1e9;--ux16-blue:#0967a3;--ux16-teal:#086b65;--ux16-amber:#805012;--ux16-danger:#a02f3d;color:var(--ux16-navy);font-family:inherit;max-width:1440px;margin-inline:auto;line-height:1.7}
+.rhf-ux-shell .ux16-hero{display:flex;justify-content:space-between;align-items:center;gap:22px;border:1px solid var(--ux16-line);background:#f8fbfd;border-radius:20px;padding:clamp(18px,3vw,30px)}
+.rhf-ux-shell .ux16-eyebrow{display:block;letter-spacing:.11em;font-size:11px;font-weight:800;color:var(--ux16-teal);direction:ltr;text-align:right}
+.rhf-ux-shell .ux16-hero h2{font-size:clamp(23px,2.7vw,34px);margin:8px 0 5px;line-height:1.4}
+.rhf-ux-shell .ux16-hero p{margin:0;max-width:690px;color:var(--ux16-muted)}
+.rhf-ux-shell .ux16-status{min-width:180px;background:white;padding:14px 18px;border:1px solid var(--ux16-line);border-radius:15px;text-align:center;display:grid;gap:1px}
+.rhf-ux-shell .ux16-status .ux16-overline,.rhf-ux-shell .ux16-status>span:last-child{font-size:12px;color:var(--ux16-muted)}
+.rhf-ux-shell .ux16-status strong{font:800 29px/1.3 ui-sans-serif,system-ui;color:var(--ux16-danger);letter-spacing:.08em}
+.rhf-ux-shell .ux16-toolbar{display:flex;align-items:center;justify-content:space-between;gap:14px;margin:16px 0;color:var(--ux16-muted);font-size:14px}
+.rhf-ux-shell .ux16-toolbar button{font:inherit;color:white;background:#115e78;border:1px solid #115e78;border-radius:10px;padding:8px 17px;cursor:pointer}
+.rhf-ux-shell .ux16-toolbar button:hover:not(:disabled){background:#0b4d64}
+.rhf-ux-shell .ux16-toolbar button:disabled{opacity:.55;cursor:wait}
+.rhf-ux-shell .ux16-metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:18px 0 24px}
+.rhf-ux-shell .ux16-metrics>div{background:white;border:1px solid var(--ux16-line);border-radius:14px;padding:15px 17px;display:flex;flex-direction:column;gap:4px;border-top:3px solid #6f9eaf}
+.rhf-ux-shell .ux16-metrics>div:nth-child(2){border-top-color:var(--ux16-teal)}
+.rhf-ux-shell .ux16-metrics>div:nth-child(3){border-top-color:var(--ux16-danger)}
+.rhf-ux-shell .ux16-metrics>div:nth-child(4){border-top-color:var(--ux16-amber)}
+.rhf-ux-shell .ux16-metrics span{font-size:13px;color:var(--ux16-muted)}
+.rhf-ux-shell .ux16-metrics strong{font-size:29px;font-variant-numeric:tabular-nums;line-height:1.3}
+.rhf-ux-shell .ux16-sectionhead{display:flex;align-items:end;justify-content:space-between;gap:12px;margin-bottom:12px}
+.rhf-ux-shell .ux16-sectionhead h3{font-size:19px;margin:0}
+.rhf-ux-shell .ux16-sectionhead p{font-size:13px;color:var(--ux16-muted);margin:0}
+.rhf-ux-shell .ux16-sectionhead>span{font-size:13px;color:var(--ux16-muted)}
+.rhf-ux-shell .ux16-list{display:grid;gap:10px}
+.rhf-ux-shell .ux16-gate{display:flex;gap:14px;padding:18px;background:white;border:1px solid var(--ux16-line);border-radius:14px;min-width:0}
+.rhf-ux-shell .ux16-step{display:grid;place-items:center;align-self:start;flex:0 0 37px;width:37px;height:37px;background:#e7f2f5;border-radius:10px;color:var(--ux16-teal);font-weight:800;font-size:13px}
+.rhf-ux-shell .ux16-gate-main{flex:1;min-width:0}
+.rhf-ux-shell .ux16-gate-head{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:9px}
+.rhf-ux-shell .ux16-gate h3{font-size:15px;margin:0}
+.rhf-ux-shell .ux16-gate p{font-size:13px;color:var(--ux16-muted);margin:6px 0 3px}
+.rhf-ux-shell .ux16-gate small{font:11px ui-monospace,SFMono-Regular,monospace;color:#5b6877;overflow-wrap:anywhere}
+.rhf-ux-shell .ux16-state{font-size:12px;white-space:nowrap;border:1px solid;padding:3px 9px;border-radius:99px;font-weight:750}
+.rhf-ux-shell .ux16-pass{color:#115c50;border-color:#b9dcd4;background:#f4faf8}
+.rhf-ux-shell .ux16-observed{color:#125d87;border-color:#b9d7e9;background:#f5fafe}
+.rhf-ux-shell .ux16-blocked{color:#922f3a;border-color:#e5c5cb;background:#fff8f8}
+.rhf-ux-shell .ux16-not_run{color:#78500e;border-color:#eddcb8;background:#fffdf7}
+.rhf-ux-shell .ux16-message{background:#f7fafc;border:1px solid var(--ux16-line);padding:20px;border-radius:12px}
+.rhf-ux-shell .ux16-error{border-color:#d99fa5;color:#872d3a}
+.rhf-ux-shell .ux16-footer{padding:18px 5px;margin-top:18px;color:var(--ux16-muted);font-size:13px;border-top:1px solid var(--ux16-line)}
+.rhf-ux-shell .ux16-footer p{margin:4px 0 0}
+.rhf-ux-shell .ux16-root button:focus-visible{outline:3px solid #daac43;outline-offset:3px}
+@media(max-width:900px){.rhf-ux-shell .ux16-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){.rhf-ux-shell .ux16-hero{flex-direction:column;align-items:stretch}.rhf-ux-shell .ux16-status{min-width:0}.rhf-ux-shell .ux16-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.rhf-ux-shell .ux16-toolbar{flex-wrap:wrap}.rhf-ux-shell .ux16-gate{padding:13px;gap:9px}.rhf-ux-shell .ux16-step{flex-basis:30px;width:30px;height:30px}}
+@media(prefers-reduced-motion:reduce){.rhf-ux-shell .ux16-root *{scroll-behavior:auto!important;transition:none!important;animation:none!important}}

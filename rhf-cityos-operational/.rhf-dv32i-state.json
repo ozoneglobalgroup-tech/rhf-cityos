@@ -1,0 +1,34 @@
+{
+  "version": "DV32I.1",
+  "status": "APPLIED",
+  "backup": "/home/oosh/rhf-cityos-backups/dv32i-human-review-20261124T040948Z/source",
+  "originalSha256": {
+    "api/server.mjs": "177cbedd3b411cff54702b7db0748f2f83908dabda51aeeafe0e5461f9f30e94",
+    "web/src/components/rhf-h5/Dv32DCapacityReservations.jsx": "4b3d22be3d1b1c05cc5c757d8c4e920d96ceeed3e5fbb7be036584e95ff85765"
+  },
+  "originalMode": {
+    "api/server.mjs": 420,
+    "web/src/components/rhf-h5/Dv32DCapacityReservations.jsx": 420
+  },
+  "newFiles": [
+    "web/src/components/rhf-h5/Dv32DCapacityReservationsDv32H.jsx",
+    "api/dv32i-review-core.mjs",
+    "api/dv32i-review-routes.mjs",
+    "web/src/components/rhf-h5/Dv32IHumanReview.jsx"
+  ],
+  "modifiedFiles": [
+    "api/server.mjs",
+    "web/src/components/rhf-h5/Dv32DCapacityReservations.jsx"
+  ],
+  "databaseMigration": "ADDITIVE_REVIEW_LEDGER_RETAIN_ON_ROLLBACK",
+  "autoGrants": false,
+  "agentExecution": false,
+  "patchedSha256": {
+    "api/server.mjs": "add3d8858972618ed826c73569fa267d90fa98c09036e44503ec34d4fbcdb386",
+    "web/src/components/rhf-h5/Dv32DCapacityReservations.jsx": "6da8b8db8177ea4f62d4aa826127f2a055eac23731f40a8a486b54241a7ae605",
+    "web/src/components/rhf-h5/Dv32DCapacityReservationsDv32H.jsx": "4b3d22be3d1b1c05cc5c757d8c4e920d96ceeed3e5fbb7be036584e95ff85765",
+    "api/dv32i-review-core.mjs": "8b5a8e21024c15351ea2c8e1d26e52307ee3f83184fd1398616280ada5eaed7b",
+    "api/dv32i-review-routes.mjs": "ba40f754c7a5c52b79f45189621f07c263346ede21d592ea9c5a1e21f0fa9a53",
+    "web/src/components/rhf-h5/Dv32IHumanReview.jsx": "5c72e62312ed3e1b19115d513290c78fa4da90ff23e854a913a4a31df0a4a04d"
+  }
+}

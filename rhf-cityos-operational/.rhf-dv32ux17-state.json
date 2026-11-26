@@ -1,0 +1,37 @@
+{
+  "version": "DV32UX17.1",
+  "status": "APPLIED",
+  "backup": "/home/oosh/rhf-cityos-backups/dv32ux17-case-chain-assurance-20261125T013533Z/source",
+  "modifiedFiles": [
+    "web/src/components/rhf-h5/Dv32UX4RoleWorkspaces.jsx",
+    "web/src/components/rhf-h5/Dv32UX4RouterCore.mjs",
+    "api/server.mjs"
+  ],
+  "newFiles": [
+    "api/dv32ux17-chain-core.mjs",
+    "api/dv32ux17-chain-routes.mjs",
+    "web/src/components/rhf-h5/Dv32UX17ChainViewCore.mjs",
+    "web/src/components/rhf-h5/Dv32UX17ChainView.jsx",
+    "web/src/components/rhf-h5/Dv32UX17ChainView.css"
+  ],
+  "originalSha256": {
+    "web/src/components/rhf-h5/Dv32UX4RoleWorkspaces.jsx": "e6b0fd5ab4e3481e04b2842f49c6fc5d51553be551a89c649cb7d9ee64f961b7",
+    "web/src/components/rhf-h5/Dv32UX4RouterCore.mjs": "c707afe4ccb8e62ea218aab907f97cf58dd98422ab1d8749e006d177f16d63fa",
+    "api/server.mjs": "49de337c098f1a4d85728567c40a7c1c735fa1ed5657d1ff5dbf07ac21ae68fe"
+  },
+  "originalMode": {
+    "web/src/components/rhf-h5/Dv32UX4RoleWorkspaces.jsx": 420,
+    "web/src/components/rhf-h5/Dv32UX4RouterCore.mjs": 420,
+    "api/server.mjs": 420
+  },
+  "patchedSha256": {
+    "web/src/components/rhf-h5/Dv32UX4RoleWorkspaces.jsx": "2d9264973d306b74db8452f73a3144e96602b869001fdaf8efd5fc3c789994df",
+    "web/src/components/rhf-h5/Dv32UX4RouterCore.mjs": "565e1d5d043325e95f63c6c9ab52949178a2249a30b4c5562b770d37dc482c70",
+    "api/server.mjs": "d0da940f70d3206f7532fe540a38a322179241f99bf65e70ce30d8129b66f8d9",
+    "api/dv32ux17-chain-core.mjs": "432fc2b07efbdcfdd8c957f2ba156d671d753450cc1df35f4431a653c9536878",
+    "api/dv32ux17-chain-routes.mjs": "60af304018af76a31aa94f5f45e951091f53fead6ab026dedd92d36919a06ecd",
+    "web/src/components/rhf-h5/Dv32UX17ChainViewCore.mjs": "25dc6f0cfc29d4b00808806e3036015deb378f73b4641fe23da492795e5dbdd5",
+    "web/src/components/rhf-h5/Dv32UX17ChainView.jsx": "f1a99f1f4389d23474ccac98d15d13a95f6813bd716ed2aa3d7340f4bd07f069",
+    "web/src/components/rhf-h5/Dv32UX17ChainView.css": "dc252c5e22920ddfb6511a4af0672502e0386abeeaab1dc2a636660e4d1c3b72"
+  }
+}

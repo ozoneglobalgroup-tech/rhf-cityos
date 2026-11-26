@@ -1,0 +1,18 @@
+/* Scoped progressive design system additions, never global / no external fonts. */
+.rhf-ux-shell .rhf-ux-work-orders{--rhf-ink:#0c3046;--rhf-teal:#076b79;--rhf-surface:#f5fafc;color:var(--rhf-ink);padding:clamp(16px,2.5vw,30px);border-radius:18px;border:1px solid #c1d6e0;background:linear-gradient(160deg,#ffffff 0%,var(--rhf-surface) 100%);box-shadow:0 8px 26px #163a5214}
+.rhf-ux-work-orders .rhf-ux-module-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.rhf-ux-work-orders h2{font-size:clamp(1.3rem,2.3vw,1.9rem);font-weight:780;line-height:1.35;margin:.3rem 0}
+.rhf-ux-work-orders h3{font-size:1.07rem;margin:0 0 14px}
+.rhf-ux-work-orders .rhf-ux-kicker{color:#006575;font-size:.73rem;font-weight:750;letter-spacing:.12em}
+.rhf-ux-work-orders p{line-height:1.8}
+.rhf-ux-work-orders .rhf-ux-stepper{display:grid;grid-template-columns:repeat(5,minmax(120px,1fr));gap:8px;margin:16px 0;overflow-x:auto}
+.rhf-ux-work-orders .rhf-ux-stepper span{background:#e7f3f5;color:#124151;border:1px solid #b9d6dd;border-radius:10px;padding:12px 9px;text-align:center;font-size:.88rem;font-weight:650}
+.rhf-ux-work-orders .rhf-ux-boundary{background:#fef7e7;border-right:4px solid #c88315;border-radius:8px;padding:12px 16px;color:#5a3e0a}
+.rhf-ux-work-orders .rhf-ux-item{border-bottom:1px solid #d5e3ea;padding:10px 0;display:grid;gap:5px;overflow-wrap:anywhere}
+.rhf-ux-work-orders .rhf-ux-item small{color:#526e7c;font-size:.77rem;direction:ltr;text-align:right}
+.rhf-ux-work-orders .rhf-ux-form{display:grid;gap:13px}
+.rhf-ux-work-orders .rhf-ux-form label{display:grid;gap:6px;font-weight:600;color:#143f52}
+.rhf-ux-work-orders :is(button,input,select,textarea):focus-visible{outline:3px solid #e3a225;outline-offset:2px}
+.rhf-ux-work-orders button:disabled{cursor:not-allowed;opacity:.55}
+@media (max-width:760px){.rhf-ux-work-orders .rhf-ux-stepper{grid-template-columns:repeat(5,minmax(145px,1fr))}.rhf-ux-work-orders .rhf-ux-module-heading{flex-direction:column}}
+@media (prefers-reduced-motion:reduce){.rhf-ux-work-orders *{scroll-behavior:auto!important;transition:none!important;animation:none!important}}

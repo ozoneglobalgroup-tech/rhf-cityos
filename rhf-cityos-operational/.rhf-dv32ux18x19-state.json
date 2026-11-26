@@ -1,0 +1,49 @@
+{
+  "version": "DV32UX18-19.1",
+  "status": "APPLIED",
+  "backup": "/home/oosh/rhf-cityos-backups/dv32ux18x19-temporal-proof-20261125T033155Z/source",
+  "modifiedFiles": [
+    "web/src/components/rhf-h5/Dv32UX4RoleWorkspaces.jsx",
+    "web/src/components/rhf-h5/Dv32UX4RouterCore.mjs",
+    "api/server.mjs"
+  ],
+  "newFiles": [
+    "api/dv32ux18-proof-core.mjs",
+    "api/dv32ux18-proof-routes.mjs",
+    "web/src/components/rhf-h5/Dv32UX18ProofCore.mjs",
+    "web/src/components/rhf-h5/Dv32UX18OperatorProof.jsx",
+    "web/src/components/rhf-h5/Dv32UX19SecurityEvidence.jsx",
+    "web/src/components/rhf-h5/Dv32UX18_19Design.css",
+    "deploy/dv32ux18-compose.yml",
+    "deploy/dv32ux18-proof-worker/Dockerfile",
+    "deploy/dv32ux18-proof-worker/package.json",
+    "deploy/dv32ux18-proof-worker/workflows.mjs",
+    "deploy/dv32ux18-proof-worker/worker.mjs"
+  ],
+  "originalSha256": {
+    "web/src/components/rhf-h5/Dv32UX4RoleWorkspaces.jsx": "2d9264973d306b74db8452f73a3144e96602b869001fdaf8efd5fc3c789994df",
+    "web/src/components/rhf-h5/Dv32UX4RouterCore.mjs": "565e1d5d043325e95f63c6c9ab52949178a2249a30b4c5562b770d37dc482c70",
+    "api/server.mjs": "d0da940f70d3206f7532fe540a38a322179241f99bf65e70ce30d8129b66f8d9"
+  },
+  "originalMode": {
+    "web/src/components/rhf-h5/Dv32UX4RoleWorkspaces.jsx": 420,
+    "web/src/components/rhf-h5/Dv32UX4RouterCore.mjs": 420,
+    "api/server.mjs": 420
+  },
+  "patchedSha256": {
+    "web/src/components/rhf-h5/Dv32UX4RoleWorkspaces.jsx": "8be5abaa1e0425f0847bb29eb941b57b7e0b397e62a08cd79fb97641033e5ecb",
+    "web/src/components/rhf-h5/Dv32UX4RouterCore.mjs": "b2b7a1078c9dfefca95e2f6ff54fe0c39fb342daeac6aa9bccacc165a2761d30",
+    "api/server.mjs": "8ab666108047c5e8c35814d272161a0c235f3a353f4bb4f7d54956fe00437381",
+    "api/dv32ux18-proof-core.mjs": "b43ad768c99b75bd75d4e965edea7af042a62a0e0a85261c281811199af66ce0",
+    "api/dv32ux18-proof-routes.mjs": "374d967039a9187ce4b308e858de922e0162ea472dc225aa4a721ddbfb143af5",
+    "web/src/components/rhf-h5/Dv32UX18ProofCore.mjs": "a27da4e3b44477e1215f9e29315f2a52dd45bee9eafd8a534dcc5acc9d457711",
+    "web/src/components/rhf-h5/Dv32UX18OperatorProof.jsx": "c826e4d863a1f152fca17e61ab668af025ad144e0f460c3479bb415c71d73c54",
+    "web/src/components/rhf-h5/Dv32UX19SecurityEvidence.jsx": "620c164fc9edbe6354b7139f1a4cb78719474e4972c5b307e7a3ced94adf86f5",
+    "web/src/components/rhf-h5/Dv32UX18_19Design.css": "090f7e7f8126eb957327deab1ed63f2d6712d1201e57c49675b22b753ee047bc",
+    "deploy/dv32ux18-compose.yml": "c728bd017fe628036b7b556079f92b27a4dee9de8ca9a97dff9c8ae24c725a73",
+    "deploy/dv32ux18-proof-worker/Dockerfile": "2dcd180b26d2029171a33243f2cd3aa43f599c6c7d6fcbc7d7f242a89a068671",
+    "deploy/dv32ux18-proof-worker/package.json": "fd4134a4e6e3e50103c1320fe487d4e34c8d2db0b261042c76d453d2ffc0e066",
+    "deploy/dv32ux18-proof-worker/workflows.mjs": "89ea9c5af033f4d8479d5933ec131fb663ebb248f2a273186a323c2b1ac40407",
+    "deploy/dv32ux18-proof-worker/worker.mjs": "9ece88937007245050704b30c330d69794fef10cbc45bd10f2e66694f763d263"
+  }
+}

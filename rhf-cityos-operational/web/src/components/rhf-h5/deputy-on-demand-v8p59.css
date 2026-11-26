@@ -1,0 +1,15 @@
+/* V8P5.9 — on-demand workspace loading / accessibility. Does not alter RLS or city scope. */
+.dm-shell[data-rhf-on-demand="V8P5.9"] .ux59-loading{border:1px solid #dbe7f0;background:#fff;border-radius:16px;min-height:170px;padding:24px;display:flex;flex-direction:column;gap:9px;justify-content:center;align-items:flex-start;color:#27506f;max-width:100%;overflow:hidden}
+.dm-shell[data-rhf-on-demand="V8P5.9"] .ux59-loading strong{font-size:16px;font-weight:800}
+.dm-shell[data-rhf-on-demand="V8P5.9"] .ux59-loading small{color:#607c8e;font-size:12px}
+.dm-shell[data-rhf-on-demand="V8P5.9"] .ux59-loading-bar{height:6px;width:min(100%,360px);border-radius:8px;background:linear-gradient(90deg,#226DB4 0 25%,#089949 25% 50%,#F9B21D 50% 75%,#E42527 75% 100%);opacity:.85;animation:ux59-load 1.5s ease-in-out infinite alternate}
+@keyframes ux59-load{from{transform:scaleX(.65);transform-origin:right;opacity:.7}to{transform:scaleX(1);transform-origin:right;opacity:1}}
+.dm-shell[data-rhf-on-demand="V8P5.9"] .ux59-failed{border:1px solid #f2c2c2;border-right:4px solid #E42527;border-radius:15px;background:#fff8f8;padding:20px;display:grid;gap:10px;color:#5c2930}
+.dm-shell[data-rhf-on-demand="V8P5.9"] .ux59-failed button{border:1px solid #226DB4;border-radius:9px;color:#226DB4;background:#fff;padding:8px 16px;justify-self:start;cursor:pointer}
+.dm-shell[data-rhf-on-demand="V8P5.9"] .ux59-preview-details{border:1px solid #dce7ef;border-radius:15px;background:#fff;overflow:hidden;margin:13px 0}
+.dm-shell[data-rhf-on-demand="V8P5.9"] .ux59-preview-details>summary{cursor:pointer;padding:16px 20px;font-weight:800;color:#226DB4;display:flex;justify-content:space-between;align-items:center;gap:12px;list-style:inside}
+.dm-shell[data-rhf-on-demand="V8P5.9"] .ux59-preview-details>summary span{font-size:11px;font-weight:400;color:#5d7889}
+.dm-shell[data-rhf-on-demand="V8P5.9"] .ux59-preview-details[open]>summary{border-bottom:1px solid #e1eaf0}
+.dm-shell[data-rhf-on-demand="V8P5.9"] :is(.ux59-preview-details>summary,.ux59-failed button):focus-visible{outline:3px solid #F9B21D;outline-offset:3px}
+@media(max-width:700px){.dm-shell[data-rhf-on-demand="V8P5.9"] .ux59-preview-details>summary{display:block}.dm-shell[data-rhf-on-demand="V8P5.9"] .ux59-preview-details>summary span{display:block;margin-top:7px}}
+@media(prefers-reduced-motion:reduce){.dm-shell[data-rhf-on-demand="V8P5.9"] .ux59-loading-bar{animation:none}}

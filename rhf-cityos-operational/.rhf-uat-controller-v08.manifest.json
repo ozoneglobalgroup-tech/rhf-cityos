@@ -1,0 +1,14 @@
+{
+  "v": "0.8",
+  "source": "/home/oosh/rhf-cityos-operational",
+  "original_project": "rhf-cityos-operational",
+  "created_utc": "2026-11-19T05:35:18.175760+00:00",
+  "expires_utc": "2026-11-26T05:35:18Z",
+  "original_source_hashes": {
+    "api/server.mjs": "777ccd584ac0b9a75ec8b7811eccb81f5647a840139b945d36ba57b50a6b9154",
+    "api/organization-identity-routes.mjs": "c00c5701a6c1731b684feacb12d7a10415fa20b1dfd0e66cae0c3f18ba08e946",
+    "api/uat-controller-host.mjs": "cc639d9028390637149826531069791ecb39c7fefd8a4a3360d3761be83ed9c3",
+    "api/uat-controller-scope.mjs": "5b70cdb00a7ee4e85679a617ddb2bd7b583b5755cc7d177b88c4a3e133990e3c"
+  },
+  "override_sha256": "71a0a2a97e17645fa49a29076b8db809301ab554677ed54e49ea4939c5036f2f"
+}

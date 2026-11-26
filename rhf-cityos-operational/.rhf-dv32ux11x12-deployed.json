@@ -1,0 +1,17 @@
+{
+  "schema": "RHF-DV32UX11X12-READINESS-v1",
+  "at": "2026-11-25T00:45:02.409158+00:00",
+  "workspaces": 3,
+  "routes": 25,
+  "newModules": 2,
+  "newRlsTables": 3,
+  "visualSystem": "SCOPED_RTL_THEME_FOCUS_RESPONSIVE_3_DESKS_WITH_PROGRESSIVE_WORK_ORDER_FLOW",
+  "independentWorkOrderDecision": true,
+  "thirdHumanOperatorRequest": true,
+  "temporalOperatorHandoff": "AWAITING_OPERATOR_REVIEW",
+  "automaticDispatch": false,
+  "workflowStarts": 0,
+  "verifiedUrbanValue": false,
+  "authenticatedUat": "NOT_RUN",
+  "finalGo": "NO_GO"
+}

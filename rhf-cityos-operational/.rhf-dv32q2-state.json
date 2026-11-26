@@ -1,0 +1,35 @@
+{
+  "version": "DV32Q.2",
+  "status": "APPLIED",
+  "backup": "/home/oosh/rhf-cityos-backups/dv32q2-case-territory-20261124T065220Z/source",
+  "originalSha256": {
+    "api/server.mjs": "230b02dae1b2949e1d9c61d6d03771a7283187977c2d25cecb0ab8b6498c64e5",
+    "web/src/components/rhf-h5/Dv32DCapacityReservations.jsx": "b95ab58a7e6731eec30ee1ea3c9e5a5f6b92c579bd24e0288a7c6c4f707291f9"
+  },
+  "originalMode": {
+    "api/server.mjs": 420,
+    "web/src/components/rhf-h5/Dv32DCapacityReservations.jsx": 420
+  },
+  "modifiedFiles": [
+    "api/server.mjs",
+    "web/src/components/rhf-h5/Dv32DCapacityReservations.jsx"
+  ],
+  "newFiles": [
+    "web/src/components/rhf-h5/Dv32DCapacityReservationsDv32Q.jsx",
+    "api/dv32q2-core.mjs",
+    "api/dv32q2-routes.mjs",
+    "web/src/components/rhf-h5/Dv32Q2CaseTerritory.jsx"
+  ],
+  "additiveTableRetained": true,
+  "automaticCaseUpdates": 0,
+  "autoAssignments": 0,
+  "autoTemporalStarts": 0,
+  "patchedSha256": {
+    "api/server.mjs": "dc81444f66bd438f739b1e64eb917d5a1cc878bc74187cc73be4ab1906dd38f8",
+    "web/src/components/rhf-h5/Dv32DCapacityReservations.jsx": "139acc1b16da473d9e736d220a12d6e9c44ce734b7b7898d1a361b3d1b99cb38",
+    "web/src/components/rhf-h5/Dv32DCapacityReservationsDv32Q.jsx": "b95ab58a7e6731eec30ee1ea3c9e5a5f6b92c579bd24e0288a7c6c4f707291f9",
+    "api/dv32q2-core.mjs": "a1250d5b566ada5f9fcacc0bf41b92d238cba5387e569e0b321b76e35d456e11",
+    "api/dv32q2-routes.mjs": "0d5f0bbfa4369f65ca01aeee6349a7a363b8d30b6603d96a511d8c86c42798dd",
+    "web/src/components/rhf-h5/Dv32Q2CaseTerritory.jsx": "6575d7c58f005de4314feacd564c4f926bb68f6f0e14c35fdb01acf21e93c569"
+  }
+}

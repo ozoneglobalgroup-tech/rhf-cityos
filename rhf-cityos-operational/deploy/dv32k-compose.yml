@@ -1,0 +1,25 @@
+# Additive services only; no host ports, DB volume, Temporal mutation or field-execution API.
+services:
+  app:
+    environment:
+      DV32K_BRIDGE_SECRET: ${DV32K_BRIDGE_SECRET:?DV32K bridge secret required}
+  dv32k-agent:
+    build:
+      context: ./deploy/dv32k-agent
+      dockerfile: Dockerfile
+      args:
+        DV32K_PYTHON_BASE: ${DV32K_PYTHON_BASE:-rhf-dv32k-python-base:3.12}
+    environment:
+      DV32K_BRIDGE_SECRET: ${DV32K_BRIDGE_SECRET:?DV32K bridge secret required}
+      PYTHONUNBUFFERED: "1"
+    user: "65532:65532"
+    read_only: true
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    tmpfs:
+      - /tmp:rw,nosuid,nodev,size=32m
+    mem_limit: 256m
+    pids_limit: 64
+    restart: unless-stopped

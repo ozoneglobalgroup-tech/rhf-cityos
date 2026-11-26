@@ -1,0 +1,31 @@
+{
+  "version": "DV32F.1",
+  "status": "APPLIED",
+  "backup": "/home/oosh/rhf-cityos-backups/dv32f-triad-command-20261124T034304Z",
+  "originalSha256": {
+    "api/server.mjs": "52a9f55e91c7517425aff153e5a6f514aea99d0913af73711e469398a07dbd16",
+    "web/src/components/rhf-h5/Dv32DCapacityReservations.jsx": "b75978bb97c696e3b08fc64f0e20fabb9ce45b2fafb68c77b58433e7edc7f3bf"
+  },
+  "originalMode": {
+    "api/server.mjs": 420,
+    "web/src/components/rhf-h5/Dv32DCapacityReservations.jsx": 384
+  },
+  "modifiedFiles": [
+    "api/server.mjs",
+    "web/src/components/rhf-h5/Dv32DCapacityReservations.jsx"
+  ],
+  "newFiles": [
+    "web/src/components/rhf-h5/Dv32DCapacityReservationsDv32E.jsx",
+    "api/dv32f-core.mjs",
+    "api/dv32f-executive-routes.mjs",
+    "web/src/components/rhf-h5/Dv32FThreeDesk.jsx"
+  ],
+  "patchedSha256": {
+    "api/server.mjs": "80cede14231c898472ad9babc861e1cc46af3418f70bacc320c42995162d271e",
+    "web/src/components/rhf-h5/Dv32DCapacityReservations.jsx": "6fdc8a1420eb3b92c9177492c2c274875052cb5acda59385f72b4f2f3966470e",
+    "web/src/components/rhf-h5/Dv32DCapacityReservationsDv32E.jsx": "b75978bb97c696e3b08fc64f0e20fabb9ce45b2fafb68c77b58433e7edc7f3bf",
+    "api/dv32f-core.mjs": "782c4d5ce2236657810181a8fa1814869e6ecfebad592fdaeb271b25860dc71e",
+    "api/dv32f-executive-routes.mjs": "367c5171a88e9aca77efe2f31fa5b0aeef050704f240b323377895bef8b62be9",
+    "web/src/components/rhf-h5/Dv32FThreeDesk.jsx": "25a822b08d46e21068d2f696e691ec5d4a9cf9d17e73aeabe036b8eb430ee6d8"
+  }
+}

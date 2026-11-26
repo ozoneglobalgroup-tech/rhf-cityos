@@ -1,0 +1,67 @@
+/* DV32UX9-10: scoped, accessible RTL design language for the role workspaces. */
+.rhf-ux-shell, .rhf-ux-entry {
+  --rhf-ux-navy:#102a43; --rhf-ux-teal:#087c83; --rhf-ux-blue:#2563a7;
+  --rhf-ux-ink:#172f47; --rhf-ux-muted:#52677c; --rhf-ux-bg:#f3f6fa;
+  --rhf-ux-surface:#ffffff; --rhf-ux-border:#dce5ed; --rhf-ux-focus:#f0aa31;
+  --rhf-ux-success:#08755d; --rhf-ux-danger:#b4233f;
+  font-family:Vazirmatn,'IRANSansX','Segoe UI',Tahoma,Arial,sans-serif;
+  line-height:1.7; font-variant-numeric:tabular-nums;
+}
+.rhf-ux-shell {background:var(--rhf-ux-bg)!important;color:var(--rhf-ux-ink)!important}
+.rhf-ux-shell *, .rhf-ux-entry * {box-sizing:border-box}
+.rhf-ux-shell :where(button,select,input,textarea,a):focus-visible,
+.rhf-ux-entry :where(button,select,input,textarea,a):focus-visible {
+  outline:3px solid var(--rhf-ux-focus)!important; outline-offset:3px!important;
+}
+.rhf-ux-shell :where(button,select,input,textarea),.rhf-ux-entry button {font-family:inherit}
+.rhf-ux-shell button {transition:background-color .16s ease, box-shadow .16s ease, transform .16s ease}
+.rhf-ux-shell button:disabled {opacity:.57;cursor:not-allowed!important}
+.rhf-ux-shell button:not(:disabled):hover {box-shadow:0 4px 13px #102a4320}
+.rhf-ux-header {background:linear-gradient(115deg,#102a43,#145e73)!important;box-shadow:0 5px 20px #102a431a}
+.rhf-ux-card {border-radius:18px!important;box-shadow:0 6px 24px #102a430c;transition:transform .2s ease,box-shadow .2s ease}
+.rhf-ux-card:focus-within {box-shadow:0 10px 26px #102a431e}
+.rhf-ux-work-layout {min-width:0}
+.rhf-ux-sidebar {border-radius:18px!important;border:1px solid var(--rhf-ux-border)!important;box-shadow:0 6px 24px #102a430b}
+.rhf-ux-sidebar [aria-current='page'] {font-weight:750;box-shadow:0 3px 10px #102a4320}
+.rhf-ux-module {background:var(--rhf-ux-surface)!important;border:1px solid var(--rhf-ux-border)!important;
+  border-radius:18px!important;box-shadow:0 8px 24px #102a430c;color:var(--rhf-ux-ink)!important}
+.rhf-ux-module h2 {font-size:clamp(1.12rem,1.6vw,1.45rem);line-height:1.6;letter-spacing:-.02em}
+.rhf-ux-module h3 {font-size:1.06rem;color:#214761}
+.rhf-ux-module :where(input,select,textarea) {background:#fff;border-color:#b9c9d6!important;
+  border-radius:10px!important;min-height:43px;max-width:100%;color:#17364e}
+.rhf-ux-module :where(input,select,textarea):focus {border-color:#087c83!important}
+.rhf-ux-module label {display:block;font-weight:600;color:#345167;font-size:.93rem}
+.rhf-ux-module label> :where(input,select,textarea) {margin-top:5px;display:block}
+.rhf-ux-module button {min-height:43px;border-radius:10px!important;font-weight:650}
+.rhf-ux-module .rhf-ux-metrics {display:flex;gap:10px;flex-wrap:wrap;margin:15px 0 20px}
+.rhf-ux-module .rhf-ux-metric {background:#edf6f7;border:1px solid #d0e7e9;
+  color:#155c62;border-radius:12px;padding:9px 13px;font-weight:650}
+.rhf-ux-module .rhf-ux-columns {display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:14px}
+.rhf-ux-module .rhf-ux-subpanel {background:#fcfdff;border:1px solid var(--rhf-ux-border);border-radius:13px;padding:15px}
+.rhf-ux-module .rhf-ux-form {background:#f8fafc;border:1px solid var(--rhf-ux-border);
+  padding:clamp(14px,2vw,24px);border-radius:16px}
+.rhf-ux-module .rhf-ux-help {font-size:.86rem;color:var(--rhf-ux-muted)}
+.rhf-ux-module .rhf-ux-alert {border:1px solid #f2b7c4;border-inline-start:4px solid var(--rhf-ux-danger);
+  background:#fff2f5;padding:11px 14px;border-radius:8px}
+.rhf-ux-module .rhf-ux-success {border:1px solid #bde5d4;border-inline-start:4px solid var(--rhf-ux-success);
+  background:#eaf8f2;padding:11px 14px;border-radius:8px}
+.rhf-ux-module code {overflow-wrap:anywhere;direction:ltr;unicode-bidi:isolate;font-family:Consolas,monospace}
+.rhf-ux-entry {background:linear-gradient(115deg,#102a43,#0e6977)!important;
+  border-radius:18px!important;box-shadow:0 10px 26px #102a4325}
+@media (max-width:900px) {
+ .rhf-ux-work-layout {display:block!important}
+ .rhf-ux-sidebar {position:static!important;display:flex;gap:7px;overflow-x:auto;white-space:nowrap;
+   max-width:100%;margin-bottom:14px;align-items:center}
+ .rhf-ux-sidebar h3 {min-width:145px;align-self:center;margin:6px!important}
+ .rhf-ux-sidebar button {display:inline-block!important;min-width:170px;width:auto!important;flex-shrink:0}
+ .rhf-ux-module {padding:15px!important}
+}
+@media (max-width:520px) {
+ .rhf-ux-header {position:static!important;padding:13px!important}
+ .rhf-ux-card {min-width:0}
+ .rhf-ux-module .rhf-ux-columns {grid-template-columns:1fr}
+ .rhf-ux-module .rhf-ux-form {padding:13px}
+}
+@media (prefers-reduced-motion:reduce) {
+ .rhf-ux-shell button,.rhf-ux-card {transition:none!important}
+}

@@ -1,0 +1,61 @@
+import React,{useEffect,useMemo,useRef,useState} from 'react';
+import {AlertTriangle,ArrowLeft,Bot,CheckCircle2,ChevronDown,ClipboardCheck,Database,FileCheck2,LockKeyhole,PlayCircle,RefreshCw,ShieldCheck,Workflow,X} from 'lucide-react';
+import {validateBriefing} from './agent-briefing-v8p66-ui-core.mjs';
+import {HANDOFF_UI_VERSION,STATES,validateHandoffCapabilities,validateMissionList,validateCreatedHandoff,validateMissionDecision,validateTemporalState,handoffSummary} from './agent-handoff-v8p67-ui-core.mjs';
+import './agent-handoff-v8p67.css';
+const E=x=>encodeURIComponent(String(x??''));
+const fa=n=>new Intl.NumberFormat('fa-IR').format(Number.isSafeInteger(n)?n:0);
+const defaultNote='درخواست بازبینی مستقل شواهد، بررسی شکاف ثبت‌شده و تعیین اقدام مجاز بدون دستور میدانی';
+export default function DeputyGovernedHandoffV8P67({city,cityName,api,onClose=()=>{},onAgents=()=>{},onDecisions=()=>{},onGovernance=()=>{}}){
+ const [phase,setPhase]=useState('IDLE'),[brief,setBrief]=useState(null),[ledger,setLedger]=useState(null),[caps,setCaps]=useState(null);
+ const [caseKey,setCaseKey]=useState(''),[missionKey,setMissionKey]=useState(''),[note,setNote]=useState(defaultNote),[reviewNote,setReviewNote]=useState('پس از بررسی مستقل مستندات این مأموریت، تصمیم مسئول دارای اختیار ثبت می‌شود');
+ const [requestKey,setRequestKey]=useState(''),[workflow,setWorkflow]=useState(null),[busy,setBusy]=useState(false),[message,setMessage]=useState(''),[detail,setDetail]=useState(null);
+ const seq=useRef(0),guard=useRef(false);
+ useEffect(()=>{seq.current++;setPhase('IDLE');setBrief(null);setLedger(null);setCaps(null);setCaseKey('');setMissionKey('');setRequestKey('');setWorkflow(null);setMessage('');setDetail(null);},[city]);
+ const base=`/cities/${E(city)}`;
+ const finding=useMemo(()=>brief?.items.find(x=>x.id===caseKey)||brief?.items[0]||null,[brief,caseKey]);
+ const mission=useMemo(()=>ledger?.rows.find(x=>x.id===missionKey)||ledger?.rows[0]||null,[ledger,missionKey]);
+ const canPropose=caps?.role==='MUNICIPAL_ADMIN'||caps?.role==='DEPUTY'||caps?.role==='DIRECTOR';
+ async function execute(fn){if(guard.current||!city||typeof api!=='function')return;guard.current=true;setBusy(true);setMessage('');try{await fn();}catch{if(phase==='LOADING')setPhase('ERROR');setMessage('درخواست تکمیل نشد یا وضعیت/دسترسی آن قابل تأیید نیست. دوباره وضعیت پرونده و مجوز را بررسی کنید.');}finally{setBusy(false);guard.current=false;}}
+ async function refresh(){await execute(async()=>{let call=++seq.current;setPhase('LOADING');const [a,b,c]=await Promise.all([api(`${base}/agent-specialist-briefing`),api(`${base}/agent-missions`),api(`${base}/agent-governed-handoffs`)]);if(call!==seq.current)return;const bb=validateBriefing(city,a),ll=validateMissionList(b,city),cc=validateHandoffCapabilities(c,city);if(!bb||!ll||!cc)throw Error('UNTRUSTED_RESPONSE');setBrief(bb);setLedger(ll);setCaps(cc);setPhase('READY');setMessage('داده‌ها از سرور همان شهرداری دریافت شد؛ وضعیت اتصال زنده GIS/IoT از این پاسخ اثبات نمی‌شود.');});}
+ async function updateLedger(id){const b=await api(`${base}/agent-missions`);const ll=validateMissionList(b,city);if(!ll)throw Error('LEDGER_INVALID');setLedger(ll);if(id)setMissionKey(id);}
+ async function propose(){if(!finding||!canPropose||note.trim().length<12||note.trim().length>450){setMessage('برای ثبت پیشنهاد، نقش مجاز و توضیح ۱۲ تا ۴۵۰ نویسه‌ای لازم است.');return;}
+  await execute(async()=>{const key=requestKey||crypto.randomUUID();setRequestKey(key);const x=await api(`${base}/agent-governed-handoffs`,'POST',{caseId:finding.caseId,findingId:finding.id,evidenceFingerprint:finding.evidenceFingerprint,requestKey:key,note:note.trim()});if(!validateCreatedHandoff(x,city,key))throw Error('CREATED_INVALID');await updateLedger(x.mission.id);setWorkflow(null);setMessage('پیشنهاد مستند ثبت شد و منتظر بررسی مستقل است. هیچ دستور میدانی اجرا نشده است.');setRequestKey('');});
+ }
+ async function review(action){if(!mission||mission.status!=='PROPOSED'||reviewNote.trim().length<12||reviewNote.trim().length>500){setMessage('انتخاب مأموریت در انتظار بررسی و توضیح معتبر الزامی است.');return;}
+  await execute(async()=>{const result=await api(`${base}/agent-missions/${E(mission.id)}`,'PATCH',{action,version:mission.version,note:reviewNote.trim()});const state=action==='AUTHORIZE'?'AUTHORIZED':'REJECTED';if(!validateMissionDecision(result,city,mission.id,state))throw Error('REVIEW_INVALID');await updateLedger(mission.id);setMessage(state==='AUTHORIZED'?'مجوز مستقل مأموریت ثبت شد؛ هنوز اجرای شهری رخ نداده است.':'مأموریت رد شد؛ اجرای Temporal مجاز نیست.');});
+ }
+ async function temporal(action){if(!mission)return;await execute(async()=>{let x;if(action==='STATUS')x=await api(`${base}/agent-temporal-workflows/${E(mission.id)}`);
+  else if(action==='START')x=await api(`${base}/agent-temporal-workflows`,'POST',{missionId:mission.id,acknowledgeReadOnly:true});
+  else if(action==='RELEASE')x=await api(`${base}/agent-temporal-workflows/${E(mission.id)}`,'POST',{action:'RELEASE',acknowledgeReadOnly:true});
+  else throw Error('ACTION_INVALID');
+  const v=validateTemporalState(x,city,mission.id);if(!v)throw Error('TEMPORAL_RESPONSE_INVALID');setWorkflow(v);setMessage(action==='START'?'Temporal برای تحلیل فقط‌خواندنی ثبت/بازیابی شد.':action==='RELEASE'?'سیگنال آزادسازی فقط‌خواندنی پذیرفته شد؛ پایان تحلیل را جداگانه بررسی کنید.':'وضعیت واقعی گردش‌کار بازیابی شد.');});}
+ async function viewAudit(){if(!mission)return;await execute(async()=>{const x=await api(`${base}/agent-missions/${E(mission.id)}`);if(x?.scope!==city||x.mission?.id!==mission.id||!Array.isArray(x.events)||x.events.length>100)throw Error('AUDIT_INVALID');setDetail(x);setMessage('تاریخچه محدود مأموریت دریافت شد.');});}
+ async function copy(){if(!mission&&!finding)return;try{await navigator.clipboard.writeText(handoffSummary({cityName,finding,mission,temporal:workflow}));setMessage('خلاصه بررسی کپی شد؛ اقدامی در سرور ثبت نشد.');}catch{setMessage('دسترسی به Clipboard در این مرورگر مجاز نیست.');}}
+ return <section className="gh67" dir="rtl" data-rhf-governed-handoff={HANDOFF_UI_VERSION} aria-label="مسیر مستند از یافته ایجنت تا تأیید انسانی و Temporal">
+  <header className="gh67-head"><div className="gh67-heading"><span><Workflow size={24}/></span><div><small>GOVERNED EXECUTION / V8P6.7</small><h3>از یافته مستند تا مأموریت تحت حاکمیت</h3><p>پیشنهادِ مبتنی بر هش شواهد ← بررسی مستقل انسان ← گردش‌کار پایدار فقط‌خواندنی ← مشاهده نتیجه تحلیل</p></div></div><button aria-label="بستن مسیر مجاز" onClick={onClose} type="button"><X size={17}/></button></header>
+  <div className="gh67-warning"><LockKeyhole size={21}/><span><b>مرز اختیار:</b> این گردش‌کار فقط تحلیل داده و ثبت ردپای نرم‌افزاری است؛ اعزام نیرو، دستور پیمانکار، پرداخت، تغییر پرونده شهری یا اثبات منفعت عمومی انجام نمی‌دهد.</span></div>
+  <div className="gh67-top"><button className="gh67-main" type="button" disabled={busy||phase==='LOADING'} onClick={refresh}><RefreshCw size={16}/>{busy?'در حال پردازش…':'خواندن یافته‌ها و مأموریت‌های مجاز'}</button><button type="button" onClick={onAgents}><Bot size={16}/> دفتر ایجنت‌ها</button><button type="button" onClick={onGovernance}><ShieldCheck size={16}/> نقش‌ها و حسابرسی</button><button type="button" onClick={onDecisions}><ClipboardCheck size={16}/> میز تصمیم مدیر</button></div>
+  {phase==='IDLE'&&<p className="gh67-empty" role="status">برای دریافت داده‌های همین شهرداری، «خواندن یافته‌ها و مأموریت‌های مجاز» را انتخاب کنید. هنوز هیچ اقدامی در سرور انجام نشده است.</p>}
+  {phase==='LOADING'&&<p className="gh67-empty" role="status">در حال دریافت تحلیل مستند و وضعیت دفتر مأموریت…</p>}
+  {phase==='READY'&&brief&&ledger&&<div className="gh67-layout">
+   <div className="gh67-panel"><div className="gh67-p-title"><FileCheck2 size={18}/><h4>۱. پیشنهاد مستند و قابل بازبینی</h4></div><p>فقط شکاف‌های واقعیِ قابل مشاهده در نمونه محدود پرونده‌ها. پیشنهاد جدید، تأیید یا اجرای مأموریت نیست.</p>
+    <label>یافته موردنظر<select value={finding?.id||''} onChange={e=>{setCaseKey(e.target.value);setRequestKey('')}} disabled={!brief.items.length}>{brief.items.length?brief.items.map(x=><option value={x.id} key={x.id}>{x.title} · {x.caseId.slice(0,8)}</option>):<option value="">یافته‌ای در نمونه مشاهده نشد</option>}</select></label>
+    {finding&&<><div className="gh67-finding"><strong>{finding.title}</strong><span>{finding.why}</span><small dir="ltr">SHA256 {finding.evidenceFingerprint}</small></div><label>توضیح پیشنهاد برای بررسی انسانی<textarea rows={3} maxLength={450} value={note} onChange={e=>{setNote(e.target.value);setRequestKey('')}}/></label><button className="gh67-main" type="button" disabled={busy||!canPropose||note.trim().length<12} onClick={propose}><FileCheck2 size={16}/> ثبت پیشنهاد در دفتر مأموریت</button></>}
+    <p className="gh67-limits">نقش فعلی: {caps?.role||'نامشخص'}. مجوز پیشنهاد: {canPropose?'بر اساس نقش، مشروط به اعتبار شواهد':'برای این نقش وجود ندارد'}. داده هنگام ثبت دوباره بررسی می‌شود.</p>
+   </div>
+   <div className="gh67-panel"><div className="gh67-p-title"><ShieldCheck size={18}/><h4>۲. بررسی انسانی مستقل</h4></div><p>پیشنهاددهنده حق تأیید مأموریت خود را ندارد. سرور این ممنوعیت را کنترل می‌کند.</p>
+    <label>مأموریت ثبت‌شده<select value={mission?.id||''} onChange={e=>{setMissionKey(e.target.value);setWorkflow(null);setDetail(null)}} disabled={!ledger.rows.length}>{ledger.rows.length?ledger.rows.map(m=><option key={m.id} value={m.id}>{m.caseSummary||m.objective} · {STATES[m.status]} · {m.id.slice(0,8)}</option>):<option value="">مأموریتی یافت نشد</option>}</select></label>
+    {mission&&<><div className="gh67-finding"><strong>{STATES[mission.status]||'نامشخص'}</strong><span>شناسه {mission.id} · نسخه {mission.version}</span><small>سند مأموریت: {mission.evidenceSha256}</small></div><label>دلیل و مستند تصمیم<textarea rows={3} maxLength={500} value={reviewNote} onChange={e=>setReviewNote(e.target.value)}/></label><div className="gh67-inline"><button type="button" disabled={busy||mission.status!=='PROPOSED'} onClick={()=>review('AUTHORIZE')}><ShieldCheck size={16}/> تأیید مستقل</button><button type="button" disabled={busy||mission.status!=='PROPOSED'} onClick={()=>review('REJECT')}><AlertTriangle size={16}/> رد پیشنهاد</button></div><button type="button" onClick={viewAudit} disabled={busy}><Database size={16}/> مشاهده ردپای مأموریت</button></>}
+    <p className="gh67-limits">فقط نقش MUNICIPAL_ADMIN می‌تواند بررسی کند و باید با ایجادکننده مأموریت متفاوت باشد. ثبت تأیید، دستور اجرایی نیست.</p>
+   </div>
+   <div className="gh67-panel"><div className="gh67-p-title"><Workflow size={18}/><h4>۳. گردش‌کار پایدار Temporal</h4></div><p>Workflow ابتدا منتظر مجوز انسانی می‌ماند؛ سیگنال آزادسازی فقط پس از تأیید مستقل پذیرفته می‌شود.</p>
+    {mission?<><div className="gh67-temporal"><span>مأموریت: {mission.id.slice(0,8)}</span><strong>{workflow?.phase||'وضعیت Temporal هنوز دریافت نشده'}</strong><small>{workflow?.temporalStatus||'Workflow may not have started'}</small></div><div className="gh67-inline"><button type="button" disabled={busy||!['PROPOSED','AUTHORIZED'].includes(mission.status)} onClick={()=>temporal('START')}><PlayCircle size={16}/> ایجاد/بازیابی گردش‌کار</button><button type="button" disabled={busy||mission.status!=='AUTHORIZED'} onClick={()=>temporal('RELEASE')}><LockKeyhole size={16}/> آزادسازی تحلیل مجاز</button></div><button type="button" disabled={busy} onClick={()=>temporal('STATUS')}><RefreshCw size={16}/> دریافت وضعیت Temporal</button></>:<p className="gh67-empty">برای بررسی Temporal یک مأموریت را انتخاب کنید.</p>}
+    <p className="gh67-limits">خروجی COMPLETED تنها پایان تحلیل نرم‌افزاری است؛ نه اجرای عملیات و نه تأیید مستقل ارزش شهری.</p>
+   </div>
+  </div>}
+  {detail&&<div className="gh67-events"><h4>رویدادهای ثبت‌شده مأموریت · حداکثر ۱۰۰ مورد</h4><ol>{detail.events.map((x,i)=><li key={`${x.created_at}-${i}`}><strong>{x.event_type}</strong><span>{x.created_at?new Date(x.created_at).toLocaleString('fa-IR'):'زمان نامشخص'}</span></li>)}</ol></div>}
+  {message&&<p className="gh67-message" role="status">{message}</p>}
+  <footer className="gh67-foot"><span>حفاظت RLS · ثبت رویداد · هش شواهد · عدم خودتأییدی · بدون دستور میدانی</span><button type="button" onClick={copy}><ClipboardCheck size={15}/> کپی خلاصه کنترل‌شده</button></footer>
+ </section>;
+}

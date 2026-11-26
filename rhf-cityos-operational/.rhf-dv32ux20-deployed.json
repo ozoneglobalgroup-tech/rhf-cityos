@@ -1,0 +1,13 @@
+{
+  "schema": "RHF-DV32UX20-INSTALL-v1",
+  "atUtc": "2026-11-25T03:45:04.511588+00:00",
+  "workspaces": 3,
+  "routes": 42,
+  "finalGo": "NO_GO",
+  "acceptanceUat": "NOT_RUN",
+  "dbMigrations": 0,
+  "iamGrants": 0,
+  "automaticTemporalStarts": 0,
+  "fieldDispatch": false,
+  "verifiedUrbanValue": false
+}

@@ -1,0 +1,29 @@
+{
+  "version": "DV32UX20.1",
+  "status": "APPLIED",
+  "backup": "/home/oosh/rhf-cityos-backups/dv32ux20-final-acceptance-20261125T034446Z/source",
+  "modifiedFiles": [
+    "web/src/components/rhf-h5/Dv32UX4RoleWorkspaces.jsx",
+    "web/src/components/rhf-h5/Dv32UX4RouterCore.mjs"
+  ],
+  "newFiles": [
+    "web/src/components/rhf-h5/Dv32UX20Acceptance.jsx",
+    "web/src/components/rhf-h5/Dv32UX20AcceptanceCore.mjs",
+    "web/src/components/rhf-h5/Dv32UX20Acceptance.css"
+  ],
+  "originalSha256": {
+    "web/src/components/rhf-h5/Dv32UX4RoleWorkspaces.jsx": "8be5abaa1e0425f0847bb29eb941b57b7e0b397e62a08cd79fb97641033e5ecb",
+    "web/src/components/rhf-h5/Dv32UX4RouterCore.mjs": "b2b7a1078c9dfefca95e2f6ff54fe0c39fb342daeac6aa9bccacc165a2761d30"
+  },
+  "originalMode": {
+    "web/src/components/rhf-h5/Dv32UX4RoleWorkspaces.jsx": 420,
+    "web/src/components/rhf-h5/Dv32UX4RouterCore.mjs": 420
+  },
+  "patchedSha256": {
+    "web/src/components/rhf-h5/Dv32UX4RoleWorkspaces.jsx": "a267ba5e8293f2bb2e6ef73287fb8fec4afc2704672a619eba8e3f3255cfa710",
+    "web/src/components/rhf-h5/Dv32UX4RouterCore.mjs": "92180a633226c39f5218eb3eacc7a6753a062a3f079e3bda86ab17615e147f91",
+    "web/src/components/rhf-h5/Dv32UX20Acceptance.jsx": "218ee532526a5074e1829de10f596b4a879474e89a5ff5cfdd00a74b7aac3da9",
+    "web/src/components/rhf-h5/Dv32UX20AcceptanceCore.mjs": "aa04190eba572153c2ee36aebb9f80cb202ae3a09a4dccc7bc7cedd822127f27",
+    "web/src/components/rhf-h5/Dv32UX20Acceptance.css": "41676bb7d5ef2e03e9844d2c44b8b6c3fef96e428d8f589f034816ad2de6e2d9"
+  }
+}

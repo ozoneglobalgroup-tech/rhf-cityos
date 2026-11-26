@@ -1,0 +1,11 @@
+/* DV2.3B2A -- contained within existing operational React desks. */
+.rhf-dv23b2a{margin:16px 0;padding:18px;border:1px solid #cbd5e1;border-radius:14px;background:var(--surface,#fff);color:var(--text,#172337)}
+.rhf-dv23b2a>header{display:flex;justify-content:space-between;gap:12px;align-items:start;flex-wrap:wrap}
+.rhf-dv23b2a h3{margin:4px 0 8px;font-size:1.1rem}.rhf-dv23b2a p{margin:8px 0}.rhf-dv23b2a small{color:var(--muted,#667085)}
+.rhf-dv23b2a button{display:inline-flex;align-items:center;gap:6px;cursor:pointer;background:#f0f6fb;border:1px solid #b9cdda;padding:8px 11px;border-radius:9px;color:#153b50}
+.rhf-dv23b2a button:disabled{opacity:.55;cursor:not-allowed}
+.rhf-dv23b2a__notice{display:flex;gap:8px;align-items:center;padding:12px;border-radius:10px;background:#edf3f8;margin:12px 0}
+.rhf-dv23b2a article{padding:12px 14px;border:1px solid #d7e0e8;border-radius:12px;margin:12px 0;overflow-wrap:anywhere}
+.rhf-dv23b2a article strong{display:flex;align-items:center;gap:7px}.rhf-dv23b2a li{margin:5px 0}.rhf-dv23b2a code{direction:ltr;unicode-bidi:embed}
+.rhf-dv23b2a footer{border-top:1px solid #e0e8ef;margin-top:15px;padding-top:10px;color:#546579}
+@media(max-width:650px){.rhf-dv23b2a{padding:12px}.rhf-dv23b2a>header{display:block}}

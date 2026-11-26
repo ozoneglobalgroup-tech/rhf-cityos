@@ -1,0 +1,37 @@
+{
+  "version": "DV32UX13-15.1",
+  "status": "APPLIED",
+  "backup": "/home/oosh/rhf-cityos-backups/dv32ux13x15-read-only-ui-20261125T005535Z/source",
+  "modifiedFiles": [
+    "api/server.mjs",
+    "web/src/components/rhf-h5/Dv32UX4RoleWorkspaces.jsx",
+    "web/src/components/rhf-h5/Dv32UX4RouterCore.mjs"
+  ],
+  "newFiles": [
+    "api/dv32ux13-portfolio-core.mjs",
+    "api/dv32ux13-portfolio-routes.mjs",
+    "web/src/components/rhf-h5/Dv32UX13PortfolioCore.mjs",
+    "web/src/components/rhf-h5/Dv32UX13Portfolio.jsx",
+    "web/src/components/rhf-h5/Dv32UX15ExecutiveDesign.css"
+  ],
+  "originalSha256": {
+    "api/server.mjs": "67989107ceb8f9b62540067400372482fd67628b5c62c9d8d3f1a20c247342a0",
+    "web/src/components/rhf-h5/Dv32UX4RoleWorkspaces.jsx": "0507ad277e165484d5e400da6d287bfc4b6d707d35ed030943839004fe8d354d",
+    "web/src/components/rhf-h5/Dv32UX4RouterCore.mjs": "c3ddd55be8894c15a283ed75bd742116a04009f354cda588473b21809f35ab5a"
+  },
+  "originalMode": {
+    "api/server.mjs": 420,
+    "web/src/components/rhf-h5/Dv32UX4RoleWorkspaces.jsx": 420,
+    "web/src/components/rhf-h5/Dv32UX4RouterCore.mjs": 420
+  },
+  "patchedSha256": {
+    "api/server.mjs": "49de337c098f1a4d85728567c40a7c1c735fa1ed5657d1ff5dbf07ac21ae68fe",
+    "web/src/components/rhf-h5/Dv32UX4RoleWorkspaces.jsx": "61cacf578cdd2f01f09e4ded2c68067903bd8705236be425dd9dac40c8160163",
+    "web/src/components/rhf-h5/Dv32UX4RouterCore.mjs": "8e75b6bfe40a3b623e362879c5504a9a14dc85fcc8cc8e56d05888f21ea57f5c",
+    "api/dv32ux13-portfolio-core.mjs": "fc9350ae665ddd419ccf3139f5c51ef19b472231850d4cb263ef70080f7250ce",
+    "api/dv32ux13-portfolio-routes.mjs": "0460753101cb1ec81b8817df6d5f936a7439de66df06f180d5d9e608e625ab38",
+    "web/src/components/rhf-h5/Dv32UX13PortfolioCore.mjs": "fc9350ae665ddd419ccf3139f5c51ef19b472231850d4cb263ef70080f7250ce",
+    "web/src/components/rhf-h5/Dv32UX13Portfolio.jsx": "4439b1d6ad5f48aab146eea1bc68090900dac9ac97d61b283eb44f806011527b",
+    "web/src/components/rhf-h5/Dv32UX15ExecutiveDesign.css": "78ff17b45f1b23e51e81a40e80560d458f40b93675f280c9814c326fb8b7bc43"
+  }
+}

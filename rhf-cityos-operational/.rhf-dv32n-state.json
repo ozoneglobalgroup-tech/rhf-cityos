@@ -1,0 +1,37 @@
+{
+  "version": "DV32N.1",
+  "status": "APPLIED",
+  "backup": "/home/oosh/rhf-cityos-backups/dv32n-evidence-dossier-20261124T053605Z/source",
+  "originalSha256": {
+    "api/server.mjs": "83609fabd4f34a267f41a6efc9ed2bf30162d12908b7bf34c78a5c2525d04fb4",
+    "web/src/components/rhf-h5/Dv32DCapacityReservations.jsx": "89be7a0c98fbd6a7b4ec97fc0f3df2ae4c9d46fa31193588f3b5ae9424ca397b"
+  },
+  "originalMode": {
+    "api/server.mjs": 420,
+    "web/src/components/rhf-h5/Dv32DCapacityReservations.jsx": 420
+  },
+  "modifiedFiles": [
+    "api/server.mjs",
+    "web/src/components/rhf-h5/Dv32DCapacityReservations.jsx"
+  ],
+  "newFiles": [
+    "web/src/components/rhf-h5/Dv32DCapacityReservationsDv32M.jsx",
+    "api/dv32n-dossier-core.mjs",
+    "api/dv32n-dossier-routes.mjs",
+    "web/src/components/rhf-h5/Dv32NGovernedDossier.jsx"
+  ],
+  "databaseMigrations": 0,
+  "iamMutations": 0,
+  "temporalStarts": 0,
+  "temporalSignals": 0,
+  "fieldDispatch": false,
+  "dossierWrites": 0,
+  "patchedSha256": {
+    "api/server.mjs": "30d8d7137c194eccc7685ad21b3509b704c0bd0f14b9914ebc2c31e8d4097ecf",
+    "web/src/components/rhf-h5/Dv32DCapacityReservations.jsx": "0a48892db3c8f90726858f7a982bafd85358e3068f70da5bfcccd104b65c6a81",
+    "web/src/components/rhf-h5/Dv32DCapacityReservationsDv32M.jsx": "89be7a0c98fbd6a7b4ec97fc0f3df2ae4c9d46fa31193588f3b5ae9424ca397b",
+    "api/dv32n-dossier-core.mjs": "d0eb3b02f530d2b76075e5a27d6a2f62087c43cdf0d59a326831d32705b84c7c",
+    "api/dv32n-dossier-routes.mjs": "3b034d9c164e5b723a585f5c55eeef1afcb4b4acdfd3669cd0a2b6d0b923832c",
+    "web/src/components/rhf-h5/Dv32NGovernedDossier.jsx": "55f6507a628fcfdb6b0ca9c6575528fabb5f465bf14fee42d0e452ea675b656e"
+  }
+}
